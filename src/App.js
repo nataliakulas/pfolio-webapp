@@ -1,12 +1,13 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-grid-system';
 
-import ContactForm from './ContactForm';
 import Home from './media/home';
 import Portfolio from './media/portfolio';
 import Social from './media/social';
 import Contact from './media/contact';
 import Settings from './media/settings';
+
+import ContactForm from './ContactForm';
 
 
 const black = '#171717';
@@ -26,7 +27,9 @@ class App extends React.Component {
       contact: false,
       settings: false,
       nav: turquoise,
-      style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}
+      style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`},
+      field: turquoise,
+      input: grey
     }
   }
 
@@ -55,13 +58,13 @@ class App extends React.Component {
   changeTheme(color) {
     switch (color) {
       case 'black':
-        this.setState({settings: false, nav: red, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, field: red, input: black, nav: red, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
         break;
       case 'orange':
-        this.setState({settings: false, nav: navy, style: {backgroundImage: `repeating-linear-gradient(${orange} 0, ${orange} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, field: navy, input: orange, nav: navy, style: {backgroundImage: `repeating-linear-gradient(${orange} 0, ${orange} 50px, ${white} 0, ${white} 100px)`}});
         break;
       default:
-        this.setState({settings: false, nav: turquoise, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, field: turquoise, input: grey, nav: turquoise, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
     }
   }
 
@@ -71,18 +74,27 @@ class App extends React.Component {
         <Container>
           <Row>
             <Col lg={6} offset={{lg: 3}}>
-              <div className="stripe-wrapper">
+              <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : ""}`}>
-                  <div className="stripe-content">
-                    This is stripe, stripe is fun
+                  <div className="content">
                     <Settings className="settings" onClick={this.settings} fill={this.state.nav} bg={white}/>
-                    <div className={`settings-wrapper${this.state.settings ? " open" : ""}`}>
+                    <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
                       <div className="square " onClick={() => this.changeTheme('')}/>
                     </div>
+                    <Row>
+                      <Col>
+                        <div className="photo"/>
+                      </Col>
+                      <Col>
+                        <div className="content">
+                          <p>....................</p>
+                        </div>
+                      </Col>
+                    </Row>
                   </div>
-                  <div className={`nav-stripe ${this.state.section ? " top" : " bottom"}`} style={{backgroundColor: this.state.nav}}>
+                  <div className={`stripe-bar ${this.state.section ? " top" : " bottom"}`} style={{backgroundColor: this.state.nav}}>
                     <ul>
                       <li onClick={this.sectionClose}><Home fill={white}/></li>
                       <li onClick={() => this.sectionOpen('portfolio')}><Portfolio fill={white}/></li>
@@ -92,11 +104,22 @@ class App extends React.Component {
                 </div>
                 <div className={`section${this.state.section ? " open" : ""}`}>
                   {this.state.portfolio ?
-                    <div>this is portfolio section</div> : null
-                  }
+                    <Row>
+                      <Col>
+                        <div className="content">
+                          <p>....................</p>
+                        </div>
+                      </Col>
+                    </Row> : null}
                   {this.state.contact ?
-                    <div>this is contact section</div> : null
-                  }
+                    <Row>
+                      <Col>
+                        <div className="content">
+                          <p>If you have any questions, or wish to contact me,<br/> please send me a message!</p>
+                          <ContactForm field={this.state.field} input={this.state.input}/>
+                        </div>
+                      </Col>
+                    </Row> : null}
                 </div>
               </div>
             </Col>

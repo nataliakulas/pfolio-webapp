@@ -31,6 +31,8 @@ $white: #ffffff;
 }
 
 body {
+  font-family: 'Comfortaa', cursive;
+  font-size: 15px;
   color: $black;
   margin: 0;
   padding: 0;
@@ -40,11 +42,16 @@ body {
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: $black;
+  color: $white;
+}
+
 .background {
   height: 100vh;
 }
 
-.stripe-wrapper {
+.wrapper {
   height: 100vh;
 
   display: flex;
@@ -55,27 +62,11 @@ body {
   overflow: hidden;
 }
 
-.stripe {
-  width: 100%;
-  height: 200px;
-  background-color: $white;
-  transition: height 0.5s ease;
-
-  &.close {
-    height: 0;
-
-    .stripe-content {
-      display: none;
-    }
-  }
+.content {
+  padding: 15px;
 }
 
-.stripe-content {
-  position: relative;
-  display: block;
-}
-
-.nav-stripe {
+.stripe-bar {
   height: 50px;
   transform: translateY(175px);
 
@@ -105,6 +96,26 @@ body {
   }
 }
 
+.stripe {
+  width: 100%;
+  height: 200px;
+  background-color: $white;
+  transition: height 0.5s ease;
+
+  .content {
+    position: relative;
+    display: block;
+  }
+
+  &.close {
+    height: 0;
+
+    .content {
+      display: none;
+    }
+  }
+}
+
 .section {
   background-color: $white;
   width: 100%;
@@ -117,13 +128,15 @@ body {
   }
 }
 
-.settings-wrapper {
+//region Settings Bar
+.settings-bar {
   width: 120px;
   height: 50px;
 
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 10;
   transform: translateX(120px);
 
   display: flex;
@@ -134,8 +147,25 @@ body {
   background-color: $white;
   transition: transform 0.5s ease;
 
-  &.open {
+  &.visible {
     transform: translateX(0px);
+  }
+
+  .square {
+    width: 20px;
+    height: 20px;
+
+    background-color: $grey;
+    margin: 10px;
+    cursor: pointer;
+
+    &.black {
+      background-color: $black;
+    }
+
+    &.orange {
+      background-color: $orange;
+    }
   }
 }
 
@@ -143,23 +173,78 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 10;
   margin: 5px;
   cursor: pointer;
 }
 
-.square {
-  width: 20px;
-  height: 20px;
+//endregion
 
-  background-color: $grey;
-  margin: 10px;
-  cursor: pointer;
+form {
+  width: 100%;
+  color: $white;
 
-  &.black {
-    background-color: $black;
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  width: 75%;
+  position: relative;
+  overflow: hidden;
+  margin: 10px auto;
+
+  label {
+    width: 100%;
+    height: 100%;
+    float: right;
+    line-height: 20px;
+    padding: 10px;
+    transition: transform 0.5s ease;
   }
 
-  &.orange {
-    background-color: $orange;
+  input,
+  textarea {
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    color: $white;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0;
+    padding: 10px;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    transition-delay: 60ms;
+
+    &:focus,
+    &.filled {
+      transform: translateX(100%);
+      outline: none;
+
+      + label {
+        transform: translateX(75%);
+      }
+    }
   }
+}
+
+textarea {
+  resize: none;
+  height: auto;
+}
+
+button {
+  width: 40%;
+  height: 40px;
+  font-family: 'Comfortaa', cursive;
+  color: $white;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  margin: 20px auto;
 }
