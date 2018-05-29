@@ -27,7 +27,7 @@ class App extends React.Component {
 
   render() {
     const ico = "#ffffff";
-    const nav = "red";
+    const nav = "#ff0000";
     const bg = "#000000";
 
     return (
