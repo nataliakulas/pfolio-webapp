@@ -10,10 +10,11 @@ import Settings from './media/settings';
 
 
 const black = '#171717';
-const navy = '#02202B';
 const red = '#B80C09';
-const onyx = '#35393c';
-const grey = '#dadbdb';
+const navy = '#364A62';
+const orange = '#BA2D0B';
+const grey = '#dbdbdb';
+const turquoise = '#3587a4';
 const white = '#ffffff';
 
 class App extends React.Component {
@@ -24,8 +25,8 @@ class App extends React.Component {
       portfolio: false,
       contact: false,
       settings: false,
-      nav: red,
-      style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}
+      nav: turquoise,
+      style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}
     }
   }
 
@@ -47,22 +48,20 @@ class App extends React.Component {
     this.setState({section: false})
   };
 
+  settings = () => {
+    this.setState({settings: true})
+  };
+
   changeTheme(color) {
     switch (color) {
       case 'black':
-        this.setState({nav: red, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, nav: red, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
         break;
-      case 'navy':
-        this.setState({nav: red, style: {backgroundImage: `repeating-linear-gradient(${navy} 0, ${navy} 50px, ${white} 0, ${white} 100px)`}});
-        break;
-      case 'red':
-        this.setState({nav: black, style: {backgroundImage: `repeating-linear-gradient(${red} 0, ${red} 50px, ${white} 0, ${white} 100px)`}});
-        break;
-      case 'onyx':
-        this.setState({nav: grey, style: {backgroundImage: `repeating-linear-gradient(${onyx} 0, ${onyx} 50px, ${white} 0, ${white} 100px)`}});
+      case 'orange':
+        this.setState({settings: false, nav: navy, style: {backgroundImage: `repeating-linear-gradient(${orange} 0, ${orange} 50px, ${white} 0, ${white} 100px)`}});
         break;
       default:
-        this.setState({nav: onyx, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, nav: turquoise, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
     }
   }
 
@@ -76,12 +75,10 @@ class App extends React.Component {
                 <div className={`stripe${this.state.section ? " close" : ""}`}>
                   <div className="stripe-content">
                     This is stripe, stripe is fun
-                    {/*<Settings fill={ico} bg={nav}/>*/}
-                    <div className="settings-wrapper">
+                    <Settings className="settings" onClick={this.settings} fill={this.state.nav} bg={white}/>
+                    <div className={`settings-wrapper${this.state.settings ? " open" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
-                      <div className="square navy" onClick={() => this.changeTheme('navy')}/>
-                      <div className="square red" onClick={() => this.changeTheme('red')}/>
-                      <div className="square onyx" onClick={() => this.changeTheme('onyx')}/>
+                      <div className="square orange" onClick={() => this.changeTheme('orange')}/>
                       <div className="square " onClick={() => this.changeTheme('')}/>
                     </div>
                   </div>

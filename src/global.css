@@ -2,7 +2,7 @@
   0% {
     transform: translateY(150px); }
   100% {
-    transform: translateY(-75px); } }
+    transform: translateY(-50px); } }
 
 @keyframes slide-bottom {
   0% {
@@ -26,7 +26,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
 
 .stripe {
   width: 100%;
@@ -35,6 +36,12 @@ body {
   transition: height 0.5s ease; }
   .stripe.close {
     height: 0; }
+    .stripe.close .stripe-content {
+      display: none; }
+
+.stripe-content {
+  position: relative;
+  display: block; }
 
 .nav-stripe {
   height: 50px;
@@ -67,21 +74,35 @@ body {
     height: 500px; }
 
 .settings-wrapper {
+  width: 120px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(120px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  background-color: #ffffff;
+  transition: transform 0.5s ease; }
+  .settings-wrapper.open {
+    transform: translateX(0px); }
+
+.settings {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  cursor: pointer; }
 
 .square {
   width: 20px;
   height: 20px;
-  background-color: #dadbdb;
-  margin: 10px; }
+  background-color: #dbdbdb;
+  margin: 10px;
+  cursor: pointer; }
   .square.black {
     background-color: #171717; }
-  .square.navy {
-    background-color: #02202B; }
-  .square.red {
-    background-color: #B80C09; }
-  .square.onyx {
-    background-color: #35393c; }
+  .square.orange {
+    background-color: #BA2D0B; }

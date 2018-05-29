@@ -1,8 +1,15 @@
 $black: #171717;
-$navy: #02202B;
 $red: #B80C09;
-$onyx: #35393c;
-$grey: #dadbdb;
+
+$navy: #364A62;
+$orange: #BA2D0B;
+
+$onyx: #474B4D;
+$yellow: #C9C627;
+
+$grey: #dbdbdb;
+$turquoise: #3587a4;
+
 $white: #ffffff;
 
 @keyframes slide-top {
@@ -10,7 +17,7 @@ $white: #ffffff;
     transform: translateY(150px);
   }
   100% {
-    transform: translateY(-75px);
+    transform: translateY(-50px);
   }
 }
 
@@ -44,6 +51,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  overflow: hidden;
 }
 
 .stripe {
@@ -54,7 +63,16 @@ body {
 
   &.close {
     height: 0;
+
+    .stripe-content {
+      display: none;
+    }
   }
+}
+
+.stripe-content {
+  position: relative;
+  display: block;
 }
 
 .nav-stripe {
@@ -100,10 +118,33 @@ body {
 }
 
 .settings-wrapper {
+  width: 120px;
+  height: 50px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(120px);
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  background-color: $white;
+  transition: transform 0.5s ease;
+
+  &.open {
+    transform: translateX(0px);
+  }
+}
+
+.settings {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  cursor: pointer;
 }
 
 .square {
@@ -112,20 +153,13 @@ body {
 
   background-color: $grey;
   margin: 10px;
+  cursor: pointer;
 
   &.black {
     background-color: $black;
   }
 
-  &.navy {
-    background-color: $navy;
-  }
-
-  &.red {
-    background-color: $red;
-  }
-
-  &.onyx {
-    background-color: $onyx;
+  &.orange {
+    background-color: $orange;
   }
 }
