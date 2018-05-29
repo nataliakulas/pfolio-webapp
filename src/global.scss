@@ -1,3 +1,10 @@
+$black: #171717;
+$navy: #02202B;
+$red: #B80C09;
+$onyx: #35393c;
+$grey: #dadbdb;
+$white: #ffffff;
+
 @keyframes slide-top {
   0% {
     transform: translateY(150px);
@@ -17,6 +24,7 @@
 }
 
 body {
+  color: $black;
   margin: 0;
   padding: 0;
 }
@@ -41,25 +49,33 @@ body {
 .stripe {
   width: 100%;
   height: 200px;
-  background-color: white;
+  background-color: $white;
+  transition: height 0.5s ease;
+
+  &.close {
+    height: 0;
+  }
 }
 
 .nav-stripe {
   height: 50px;
+  transform: translateY(175px);
 
   ul {
-    margin: 0;
+    width: 50%;
     padding: 0;
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
   }
 
   li {
     height: 40px;
     margin: 5px;
+    cursor: pointer;
   }
 
   &.top {
@@ -72,11 +88,44 @@ body {
 }
 
 .section {
-  background-color: white;
+  background-color: $white;
   width: 100%;
   height: 0;
+  transition: height 0.5s ease;
+  overflow: hidden;
 
   &.open {
-    height: 300px;
+    height: 500px;
+  }
+}
+
+.settings-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.square {
+  width: 20px;
+  height: 20px;
+
+  background-color: $grey;
+  margin: 10px;
+
+  &.black {
+    background-color: $black;
+  }
+
+  &.navy {
+    background-color: $navy;
+  }
+
+  &.red {
+    background-color: $red;
+  }
+
+  &.onyx {
+    background-color: $onyx;
   }
 }
