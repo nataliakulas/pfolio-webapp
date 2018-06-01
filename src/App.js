@@ -26,10 +26,10 @@ class App extends React.Component {
       portfolio: false,
       contact: false,
       settings: false,
-      nav: turquoise,
+      primary: turquoise,
+      secondary: grey,
       style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`},
-      field: turquoise,
-      input: grey
+      translate: false
     }
   }
 
@@ -58,15 +58,19 @@ class App extends React.Component {
   changeTheme(color) {
     switch (color) {
       case 'black':
-        this.setState({settings: false, field: red, input: black, nav: red, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, primary: red, secondary: black, style: {backgroundImage: `repeating-linear-gradient(${black} 0, ${black} 50px, ${white} 0, ${white} 100px)`}});
         break;
       case 'orange':
-        this.setState({settings: false, field: navy, input: orange, nav: navy, style: {backgroundImage: `repeating-linear-gradient(${orange} 0, ${orange} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, primary: navy, secondary: orange, style: {backgroundImage: `repeating-linear-gradient(${orange} 0, ${orange} 50px, ${white} 0, ${white} 100px)`}});
         break;
       default:
-        this.setState({settings: false, field: turquoise, input: grey, nav: turquoise, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
+        this.setState({settings: false, primary: turquoise, secondary: grey, style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`}});
     }
   }
+
+  toggleTranslation() {
+    this.setState({translate: !this.state.translate})
+  };
 
   render() {
     return (
@@ -75,39 +79,43 @@ class App extends React.Component {
           <Row>
             <Col lg={6} offset={{lg: 3}}>
               <div className="wrapper">
-                <div className={`stripe${this.state.section ? " close" : ""}`}>
-                  <div className="content">
-                    <Settings className="settings" onClick={this.settings} fill={this.state.nav} bg={white}/>
+                <div className={`stripe${this.state.section ? " close" : " open"}`}>
+                  <div className="content" style={{position: 'relative'}}>
+                    <Settings className="settings" onClick={this.settings} fill={this.state.primary} bg={white}/>
                     <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
-                      <div className="square " onClick={() => this.changeTheme('')}/>
+                      <div className="square grey " onClick={() => this.changeTheme('')}/>
+                      <div className="separator" style={{borderTopColor: this.state.secondary}}/>
+                      <div className="square" onClick={() => this.toggleTranslation()}>{this.state.translate ? "pl" : "en"}</div>
                     </div>
                     <Row>
                       <Col>
-                        <div className="photo"/>
+                        <div className="content">
+                          <p>{this.state.translate ? "en" : "pl"}</p>
+                        </div>
                       </Col>
                       <Col>
                         <div className="content">
-                          <p>....................</p>
+                          <p>{this.state.translate ? "en" : "pl"}</p>
                         </div>
                       </Col>
                     </Row>
                   </div>
-                  <div className={`stripe-bar ${this.state.section ? " top" : " bottom"}`} style={{backgroundColor: this.state.nav}}>
-                    <ul>
-                      <li onClick={this.sectionClose}><Home fill={white}/></li>
-                      <li onClick={() => this.sectionOpen('portfolio')}><Portfolio fill={white}/></li>
-                      <li onClick={() => this.sectionOpen('contact')}><Contact fill={white}/></li>
-                    </ul>
-                  </div>
+                </div>
+                <div className={`stripe-bar`} style={{backgroundColor: this.state.primary}}>
+                  <ul>
+                    <li onClick={this.sectionClose}><Home fill={white}/></li>
+                    <li onClick={() => this.sectionOpen('portfolio')}><Portfolio fill={white}/></li>
+                    <li onClick={() => this.sectionOpen('contact')}><Contact fill={white}/></li>
+                  </ul>
                 </div>
                 <div className={`section${this.state.section ? " open" : ""}`}>
                   {this.state.portfolio ?
-                    <Row>
+                    <Row style={{height: '100%'}}>
                       <Col>
                         <div className="content">
-                          <p>....................</p>
+                          <p>{this.state.translate ? "en" : "pl"}</p>
                         </div>
                       </Col>
                     </Row> : null}
@@ -115,8 +123,7 @@ class App extends React.Component {
                     <Row>
                       <Col>
                         <div className="content">
-                          <p>If you have any questions, or wish to contact me,<br/> please send me a message!</p>
-                          <ContactForm field={this.state.field} input={this.state.input}/>
+                          <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
                         </div>
                       </Col>
                     </Row> : null}
