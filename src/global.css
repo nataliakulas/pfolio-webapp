@@ -48,11 +48,11 @@ body {
 
 .stripe {
   width: 100%;
-  max-height: 250px;
+  max-height: 300px;
   background-color: #ffffff;
   overflow: hidden;
   flex: 1;
-  transition: flex 0.5s linear; }
+  transition: flex 0.5s ease-out; }
   .stripe.close {
     flex: 0; }
   .stripe.open {
@@ -64,16 +64,16 @@ body {
   background-color: #ffffff;
   overflow: hidden;
   flex: 0;
-  transition: flex 0.5s linear; }
+  transition: flex 0.5s ease-out; }
   .section.open {
     flex: 1;
     transition-delay: 0.5s; }
 
 .settings-bar {
   width: 50px;
-  height: 100%;
+  height: calc(100% - 100px);
   position: absolute;
-  top: 0;
+  top: 50px;
   right: 0;
   z-index: 10;
   transform: translateX(50px);
@@ -87,15 +87,17 @@ body {
     transform: translateX(0px); }
   .settings-bar .separator {
     width: 55%;
-    border-top: 1px solid; }
+    border-top: 2px solid; }
   .settings-bar .square {
     min-width: 20px;
     min-height: 20px;
+    font-weight: 700;
     text-transform: uppercase;
-    margin: 10px;
+    margin: 7px;
     cursor: pointer; }
     .settings-bar .square.black {
-      background-color: #171717; }
+      background-color: #171717;
+      margin-top: 0; }
     .settings-bar .square.orange {
       background-color: #BA2D0B; }
     .settings-bar .square.grey {
@@ -111,17 +113,16 @@ body {
 
 form {
   width: 100%;
-  color: #ffffff;
   display: flex;
   flex-direction: column; }
   form p {
-    width: 75%;
-    color: #171717;
+    width: 80%;
     text-align: center;
     margin: 25px auto; }
 
 .field {
-  width: 75%;
+  width: 80%;
+  height: 50px;
   position: relative;
   overflow: hidden;
   margin: 10px auto; }
@@ -129,23 +130,23 @@ form {
     width: 100%;
     height: 100%;
     float: right;
+    color: #ffffff;
     line-height: 20px;
-    padding: 10px;
+    padding: 15px;
     transition: transform 0.5s ease; }
   .field input,
   .field textarea {
-    width: 75%;
+    width: 69%;
     height: 100%;
     position: absolute;
     top: 0;
     right: 100%;
     border: none;
     font-family: 'Comfortaa', cursive;
-    color: #ffffff;
-    font-weight: 700;
     font-size: 15px;
+    line-height: 20px;
     margin: 0;
-    padding: 10px;
+    padding: 15px;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
     transition-delay: 60ms; }
@@ -157,18 +158,19 @@ form {
       .field input:focus + label, .field input.filled + label,
       .field textarea:focus + label,
       .field textarea.filled + label {
-        transform: translateX(75%); }
+        transform: translateX(69%); }
 
 textarea {
   resize: none;
   height: auto; }
 
 button {
-  width: 40%;
-  height: 40px;
+  width: 30%;
+  height: 50px;
   font-family: 'Comfortaa', cursive;
   color: #ffffff;
   font-weight: 700;
   font-size: 15px;
   border: none;
-  margin: 20px auto; }
+  margin: 20px auto;
+  cursor: pointer; }

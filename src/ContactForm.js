@@ -17,15 +17,15 @@ export default class extends React.Component {
           "If you have any questions, or wish to contact me, please send me a message!" :
           "Jeżeli masz do mnie jakies pytania, lub chciałbyś się ze mną skontaktować, wyślij mi wiadomość!"}</p>
         <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({name: !this.state.name})}>
-          <input type="text" name="name" style={{backgroundColor: this.props.input}} className={`${this.state.name ? "filled" : ""}`}/>
+          <input type="text" name="name" className={`${this.state.name ? "filled" : ""}`}/>
           <label htmlFor="name">{this.props.translate ? "Name" : "Imię"}</label>
         </div>
         <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({email: !this.state.email})}>
-          <input type="email" name="email" style={{backgroundColor: this.props.input}} className={`${this.state.email ? "filled" : ""}`}/>
+          <input type="email" name="email" className={`${this.state.email ? "filled" : ""}`}/>
           <label htmlFor="email">E-mail</label>
         </div>
         <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({message: !this.state.message})}>
-          <textarea name="message" rows="5" style={{backgroundColor: this.props.input}} className={`${this.state.message ? "filled" : ""}`}/>
+          <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>
         <button style={{backgroundColor: this.props.field}} type="submit">{this.props.translate ? "Send" : "Wyślij"}</button>

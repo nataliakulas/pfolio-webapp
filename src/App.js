@@ -51,8 +51,8 @@ class App extends React.Component {
     this.setState({section: false})
   };
 
-  settings = () => {
-    this.setState({settings: true})
+  toggleSettings = () => {
+    this.setState({settings: !this.state.settings})
   };
 
   changeTheme(color) {
@@ -81,13 +81,13 @@ class App extends React.Component {
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
-                    <Settings className="settings" onClick={this.settings} fill={this.state.primary} bg={white}/>
+                    <Settings className="settings" onClick={this.toggleSettings} fill={this.state.primary} bg={white}/>
                     <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
                       <div className="square grey " onClick={() => this.changeTheme('')}/>
                       <div className="separator" style={{borderTopColor: this.state.secondary}}/>
-                      <div className="square" onClick={() => this.toggleTranslation()}>{this.state.translate ? "pl" : "en"}</div>
+                      <div className="square" style={{color: this.state.primary}} onClick={() => this.toggleTranslation()}>{this.state.translate ? "pl" : "en"}</div>
                     </div>
                     <Row>
                       <Col>
@@ -111,22 +111,24 @@ class App extends React.Component {
                   </ul>
                 </div>
                 <div className={`section${this.state.section ? " open" : ""}`}>
-                  {this.state.portfolio ?
-                    <Row style={{height: '100%'}}>
-                      <Col>
-                        <div className="content">
-                          <p>{this.state.translate ? "en" : "pl"}</p>
-                        </div>
-                      </Col>
-                    </Row> : null}
-                  {this.state.contact ?
-                    <Row>
-                      <Col>
-                        <div className="content">
-                          <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
-                        </div>
-                      </Col>
-                    </Row> : null}
+                  <div className="content">
+                    {this.state.portfolio ?
+                      <Row style={{height: '100%'}}>
+                        <Col>
+                          <div className="content">
+                            <p>{this.state.translate ? "en" : "pl"}</p>
+                          </div>
+                        </Col>
+                      </Row> : null}
+                    {this.state.contact ?
+                      <Row>
+                        <Col>
+                          <div className="content">
+                            <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
+                          </div>
+                        </Col>
+                      </Row> : null}
+                  </div>
                 </div>
               </div>
             </Col>
