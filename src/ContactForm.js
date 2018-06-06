@@ -14,8 +14,8 @@ export default class extends React.Component {
     return (
       <form method="POST" action="/">
         <p>{this.props.translate ?
-          "If you have any questions, or wish to contact me, please send me a message!" :
-          "Jeżeli masz do mnie jakies pytania, lub chciałbyś się ze mną skontaktować, wyślij mi wiadomość!"}</p>
+          "If you have any questions, or wish to contact me, please send me a message." :
+          "Jeżeli masz do mnie jakies pytania, lub chciałbyś się ze mną skontaktować, wyślij mi wiadomość."}</p>
         <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({name: true})}>
           <input type="text" name="name" className={`${this.state.name ? "filled" : ""}`}/>
           <label htmlFor="name">{this.props.translate ? "Name" : "Imię"}</label>
@@ -28,7 +28,9 @@ export default class extends React.Component {
           <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>
-        <button style={{backgroundColor: this.props.field}} type="submit">{this.props.translate ? "Send" : "Wyślij"}</button>
+        <button style={{backgroundColor: this.props.field}} type="submit">
+          <span>{this.props.translate ? "Send" : "Wyślij"}</span>
+        </button>
         <div>
           {window.location.hash === '#success' &&
           <div id="success">
