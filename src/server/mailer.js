@@ -6,7 +6,7 @@ const app = express();
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.get('*', (req, res) => {
@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
     user: 'namiare.studio@gmail.com',
     clientId: '219214487601-ndr1rkheq680qenl1ngsme03nphtt687.apps.googleusercontent.com',
     clientSecret: '7G8YW3DyTB3bNe0xYk3ikIem',
-    refreshToken: "1/xljXKmVLQeQJLpbUu5mmTNcep8hexIhdOu_n9PrfadM",
+    refreshToken: "1/F5bOcWGqMZhkPFvaZweq1nFbRpPP5WA-aCjzoz9R1Ac",
   },
   tls: {
     rejectUnauthorized: false
@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
 
   mailer({email, name, text: message}).then(() => {
     console.log('message sent');
-    res.redirect('/');
+    res.redirect('/#success');
   }).catch((error) => {
     console.log('send failed', error);
     res.redirect('/#error');
