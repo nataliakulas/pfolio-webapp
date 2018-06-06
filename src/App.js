@@ -31,7 +31,7 @@ class App extends React.Component {
       secondary: grey,
       style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`},
       translate: false,
-      message: window.location.pathname === '/success' || window.location.pathname === '/error'
+      message: window.location.pathname === '/#success' || window.location.pathname === '/#error'
     }
   }
 
@@ -75,7 +75,7 @@ class App extends React.Component {
   };
 
   resetHistory() {
-    if (window.location.pathname === '/success' || window.location.pathname === '/error') {
+    if (window.location.pathname === '/#success' || window.location.pathname === '/#error') {
       window.history.pushState(null, null, '/');
       this.setState({message: false})
     }
@@ -140,12 +140,12 @@ class App extends React.Component {
                       </Row> : null}
                   </div>
                 </div>
-                {this.state.message && window.location.pathname === '/success' &&
+                {this.state.message && window.location.pathname === '/#success' &&
                 <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
                   <span>{this.state.translate ? "Your message has been sent!" : "Wiadomość została wysłana!"}</span>
                 </button>
                 }
-                {this.state.message && window.location.pathname === '/error' &&
+                {this.state.message && window.location.pathname === '/#error' &&
                 <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
                   <span>{this.state.translate ? "An error occured while submitting the form." : "W czasie wysyłania formularza wystąpił błąd."}</span>
                 </button>

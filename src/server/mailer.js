@@ -56,16 +56,16 @@ app.post('/', (req, res) => {
   mailer({email, name, text: message}).then(() => {
     console.log('message sent');
     if (PORT === 4000) {
-      res.redirect('/success');
+      res.redirect('/#success');
     } else {
-      res.redirect('https://stripefolio.surge.sh/success');
+      res.redirect('https://stripefolio.surge.sh/#success');
     }
   }).catch((error) => {
     console.log('send failed', error);
     if (PORT === 4000) {
-      res.redirect('/error');
+      res.redirect('/#error');
     } else {
-      res.redirect('https://stripefolio.surge.sh/error');
+      res.redirect('https://stripefolio.surge.sh/#error');
     }
   })
 });
