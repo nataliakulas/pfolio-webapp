@@ -12,7 +12,8 @@ export default class extends React.Component {
 
   render() {
     const empty = !(this.state.name && this.state.email && this.state.message);
-    console.log(empty);
+
+    console.log(process.env.NODE_ENV)
 
     return (
       <form method="POST" action="/">
