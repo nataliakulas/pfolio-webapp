@@ -53,10 +53,10 @@ app.post('/', (req, res) => {
 
   mailer({email, name, text: message}).then(() => {
     console.log('message sent');
-    res.redirect('/#success');
+    res.redirect('https://stripefolio.surge.sh/#success');
   }).catch((error) => {
     console.log('send failed', error);
-    res.redirect('/#error');
+    res.redirect('https://stripefolio.surge.sh/#error');
   })
 });
 

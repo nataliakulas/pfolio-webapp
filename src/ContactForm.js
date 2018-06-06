@@ -12,11 +12,10 @@ export default class extends React.Component {
 
   render() {
     const empty = !(this.state.name && this.state.email && this.state.message);
-
     console.log(process.env.NODE_ENV)
 
     return (
-      <form method="POST" action="/">
+      <form method="POST" action={process.env.NODE_ENV === "production" ? "https://stripefolio.herokuapp.com/" : "/"}>
         <p>{this.props.translate ?
           "If you have any questions, or wish to contact me, please send me a message." :
           "Jeżeli masz do mnie jakies pytania, lub chciałbyś się ze mną skontaktować, wyślij mi wiadomość."}</p>
