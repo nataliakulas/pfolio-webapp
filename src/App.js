@@ -30,7 +30,8 @@ class App extends React.Component {
       primary: turquoise,
       secondary: grey,
       style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`},
-      translate: false
+      translate: false,
+      message: window.location.pathname === '/success' || window.location.pathname === '/error'
     }
   }
 
@@ -71,6 +72,13 @@ class App extends React.Component {
 
   toggleTranslation() {
     this.setState({translate: !this.state.translate})
+  };
+
+  resetHistory() {
+    if (window.location.pathname === '/success' || window.location.pathname === '/error') {
+      window.history.pushState(null, null, '/');
+      this.setState({message: false})
+    }
   };
 
   render() {
@@ -132,6 +140,16 @@ class App extends React.Component {
                       </Row> : null}
                   </div>
                 </div>
+                {this.state.message && window.location.pathname === '/success' &&
+                <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
+                  <span>{this.state.translate ? "Your message has been sent!" : "Wiadomość została wysłana!"}</span>
+                </button>
+                }
+                {this.state.message && window.location.pathname === '/error' &&
+                <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
+                  <span>{this.state.translate ? "An error occured while submitting the form." : "W czasie wysyłania formularza wystąpił błąd."}</span>
+                </button>
+                }
               </div>
             </Col>
           </Row>

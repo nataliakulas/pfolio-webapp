@@ -11,9 +11,6 @@ export default class extends React.Component {
   }
 
   render() {
-    const empty = !(this.state.name && this.state.email && this.state.message);
-    console.log(process.env.NODE_ENV)
-
     return (
       <form method="POST" action={process.env.NODE_ENV === "production" ? "https://stripefolio.herokuapp.com/" : "/"}>
         <p>{this.props.translate ?
@@ -31,21 +28,9 @@ export default class extends React.Component {
           <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>
-        <button style={{backgroundColor: this.props.field}} type="submit" disabled={empty}>
+        <button className="submit" style={{backgroundColor: this.props.field}} type="submit" disabled={!(this.state.name && this.state.email && this.state.message)}>
           <span>{this.props.translate ? "Send" : "Wyślij"}</span>
         </button>
-        <div>
-          {window.location.hash === '#success' &&
-          <div id="success">
-            <p>{this.props.translate ? "Your message has been sent!" : "Wiadomość została wysłana!"}</p>
-          </div>
-          }
-          {window.location.hash === '#error' &&
-          <div id="error">
-            <p>{this.props.translate ? "An error occured while submitting the form." : "W czasie wysyłania formularza wystąpił błąd."}</p>
-          </div>
-          }
-        </div>
       </form>
     )
   }

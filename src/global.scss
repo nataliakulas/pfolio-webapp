@@ -270,7 +270,6 @@ button {
   }
 
   &:before {
-    content: url("./media/arrow.svg");
     width: 100%;
     height: 100%;
 
@@ -310,6 +309,14 @@ button {
     &:before {
       left: 0;
     }
+  }
+
+  &.submit:before {
+    content: url("./media/arrow.svg");
+  }
+
+  &.delete:before {
+    content: url("./media/delete.svg");
   }
 }
 
