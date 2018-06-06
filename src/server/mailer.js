@@ -48,19 +48,27 @@ const mailer = ({email, name, text}) => {
   })
 };
 
+const PORT = process.env.PORT || 4000;
+
 app.post('/', (req, res) => {
   const {email = '', name = '', message = ''} = req.body;
 
   mailer({email, name, text: message}).then(() => {
     console.log('message sent');
-    res.redirect('https://stripefolio.surge.sh/#success');
+    if (PORT === 4000) {
+      res.redirect('/#success');
+    } else {
+      res.redirect('https://stripefolio.surge.sh/#success');
+    }
   }).catch((error) => {
     console.log('send failed', error);
-    res.redirect('https://stripefolio.surge.sh/#error');
+    if (PORT === 4000) {
+      res.redirect('/#error');
+    } else {
+      res.redirect('https://stripefolio.surge.sh/#error');
+    }
   })
 });
-
-const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
