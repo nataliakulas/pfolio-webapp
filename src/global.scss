@@ -4,9 +4,6 @@ $red: #B80C09;
 $navy: #364A62;
 $orange: #BA2D0B;
 
-$onyx: #474B4D;
-$yellow: #C9C627;
-
 $grey: #dbdbdb;
 $turquoise: #3587a4;
 
@@ -229,7 +226,7 @@ form {
     padding: 15px;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
-    transition-delay: 60ms;
+    transition-delay: 50ms;
 
     &:focus,
     &.filled {

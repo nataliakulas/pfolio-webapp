@@ -159,7 +159,7 @@ form {
     padding: 15px;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
-    transition-delay: 60ms; }
+    transition-delay: 50ms; }
     .field input:focus, .field input.filled,
     .field textarea:focus,
     .field textarea.filled {
