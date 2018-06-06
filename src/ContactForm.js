@@ -12,19 +12,19 @@ export default class extends React.Component {
 
   render() {
     return (
-      <form method="POST" action="http://localhost:3000/contact">
+      <form method="POST" action="/">
         <p>{this.props.translate ?
           "If you have any questions, or wish to contact me, please send me a message!" :
           "Jeżeli masz do mnie jakies pytania, lub chciałbyś się ze mną skontaktować, wyślij mi wiadomość!"}</p>
-        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({name: !this.state.name})}>
+        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({name: true})}>
           <input type="text" name="name" className={`${this.state.name ? "filled" : ""}`}/>
           <label htmlFor="name">{this.props.translate ? "Name" : "Imię"}</label>
         </div>
-        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({email: !this.state.email})}>
+        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({email: true})}>
           <input type="email" name="email" className={`${this.state.email ? "filled" : ""}`}/>
           <label htmlFor="email">E-mail</label>
         </div>
-        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({message: !this.state.message})}>
+        <div className="field" style={{backgroundColor: this.props.field}} onClick={() => this.setState({message: true})}>
           <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>

@@ -13,7 +13,7 @@ $turquoise: #3587a4;
 $white: #ffffff;
 
 body {
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', sans-serif;
   font-size: 15px;
   color: $black;
   margin: 0;
@@ -79,7 +79,7 @@ body {
   background-color: $white;
   overflow: hidden;
   flex: 1;
-  transition: flex 0.5s ease-out;
+  transition: flex 0.5s linear;
 
   &.close {
     flex: 0;
@@ -96,7 +96,7 @@ body {
   background-color: $white;
   overflow: hidden;
   flex: 0;
-  transition: flex 0.5s ease-out;
+  transition: flex 0.5s linear;
 
   &.open {
     flex: 1;
@@ -143,7 +143,6 @@ body {
 
     &.black {
       background-color: $black;
-      margin-top: 0;
     }
 
     &.orange {
@@ -156,7 +155,8 @@ body {
   }
 }
 
-.settings {
+.settings,
+.social {
   position: absolute;
   top: 0;
   right: 0;
@@ -165,8 +165,13 @@ body {
   cursor: pointer;
 }
 
+.social {
+  top: 50px;
+}
+
 //endregion
 
+//region Contact Form
 form {
   width: 100%;
 
@@ -197,6 +202,18 @@ form {
     transition: transform 0.5s ease;
   }
 
+  &:hover {
+    input,
+    textarea {
+      transform: translateX(100%);
+      outline: none;
+
+      + label {
+        transform: translateX(69%);
+      }
+    }
+  }
+
   input,
   textarea {
     width: 69%;
@@ -205,7 +222,7 @@ form {
     top: 0;
     right: 100%;
     border: none;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Comfortaa', sans-serif;
     font-size: 15px;
     line-height: 20px;
     margin: 0;
@@ -234,7 +251,7 @@ textarea {
 button {
   width: 30%;
   height: 50px;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', sans-serif;
   color: $white;
   font-weight: 700;
   font-size: 15px;
@@ -242,3 +259,5 @@ button {
   margin: 20px auto;
   cursor: pointer;
 }
+
+//endregion

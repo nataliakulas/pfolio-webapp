@@ -1,11 +1,11 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-grid-system';
 
-import Home from './media/home';
-import Portfolio from './media/portfolio';
-import Social from './media/social';
-import Contact from './media/contact';
-import Settings from './media/settings';
+import HomeIco from './media/home';
+import PortfolioIco from './media/portfolio';
+import ContactIco from './media/contact';
+import SocialIco from './media/social';
+import SettingsIco from './media/settings';
 
 import ContactForm from './ContactForm';
 
@@ -17,6 +17,7 @@ const orange = '#BA2D0B';
 const grey = '#dbdbdb';
 const turquoise = '#3587a4';
 const white = '#ffffff';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -81,7 +82,8 @@ class App extends React.Component {
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
-                    <Settings className="settings" onClick={this.toggleSettings} fill={this.state.primary} bg={white}/>
+                    <SettingsIco className="settings" onClick={this.toggleSettings} fill={this.state.primary} bg={white}/>
+                    <a href="https://www.linkedin.com/in/natalia-kulas"><SocialIco className="social" fill={this.state.primary}/></a>
                     <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
@@ -92,7 +94,10 @@ class App extends React.Component {
                     <Row>
                       <Col>
                         <div className="content">
-                          <p>{this.state.translate ? "en" : "pl"}</p>
+                          {this.state.translate ? "en" :
+                            <div>
+                            </div>
+                          }
                         </div>
                       </Col>
                       <Col>
@@ -105,9 +110,9 @@ class App extends React.Component {
                 </div>
                 <div className={`stripe-bar`} style={{backgroundColor: this.state.primary}}>
                   <ul>
-                    <li onClick={this.sectionClose}><Home fill={white}/></li>
-                    <li onClick={() => this.sectionOpen('portfolio')}><Portfolio fill={white}/></li>
-                    <li onClick={() => this.sectionOpen('contact')}><Contact fill={white}/></li>
+                    <li onClick={this.sectionClose}><HomeIco fill={white}/></li>
+                    <li onClick={() => this.sectionOpen('portfolio')}><PortfolioIco fill={white}/></li>
+                    <li onClick={() => this.sectionOpen('contact')}><ContactIco fill={white}/></li>
                   </ul>
                 </div>
                 <div className={`section${this.state.section ? " open" : ""}`}>
@@ -115,9 +120,6 @@ class App extends React.Component {
                     {this.state.portfolio ?
                       <Row style={{height: '100%'}}>
                         <Col>
-                          <div className="content">
-                            <p>{this.state.translate ? "en" : "pl"}</p>
-                          </div>
                         </Col>
                       </Row> : null}
                     {this.state.contact ?
