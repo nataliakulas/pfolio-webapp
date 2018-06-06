@@ -186,11 +186,13 @@ button {
   margin: 20px auto;
   cursor: pointer;
   backface-visibility: hidden;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  overflow: hidden; }
   button span {
     width: 100%;
     display: inline-block;
     backface-visibility: hidden;
+    text-decoration: none;
     transition: all 0.5s; }
   button:before {
     content: url("./media/arrow.svg");
@@ -203,8 +205,13 @@ button {
     font-size: 175%;
     line-height: 2; }
   button:disabled {
-    opacity: 0.5;
     cursor: not-allowed; }
+    button:disabled span {
+      text-decoration: line-through; }
+    button:disabled:hover span {
+      transform: none; }
+    button:disabled:hover:before {
+      left: -100%; }
   button:hover span {
     transform: translateX(200%); }
   button:hover:before {

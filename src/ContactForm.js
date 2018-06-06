@@ -11,6 +11,9 @@ export default class extends React.Component {
   }
 
   render() {
+    const empty = !(this.state.name && this.state.email && this.state.message);
+    console.log(empty);
+
     return (
       <form method="POST" action="/">
         <p>{this.props.translate ?
@@ -28,7 +31,7 @@ export default class extends React.Component {
           <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>
-        <button style={{backgroundColor: this.props.field}} type="submit">
+        <button style={{backgroundColor: this.props.field}} type="submit" disabled={empty}>
           <span>{this.props.translate ? "Send" : "Wyślij"}</span>
         </button>
         <div>

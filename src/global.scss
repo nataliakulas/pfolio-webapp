@@ -258,11 +258,13 @@ button {
   cursor: pointer;
   backface-visibility: hidden;
   transition: all 0.5s;
+  overflow: hidden;
 
   span {
     width: 100%;
     display: inline-block;
     backface-visibility: hidden;
+    text-decoration: none;
 
     transition: all 0.5s;
   }
@@ -283,8 +285,21 @@ button {
   }
 
   &:disabled {
-    opacity: 0.5;
     cursor: not-allowed;
+
+    span {
+      text-decoration: line-through;
+    }
+
+    &:hover {
+      span {
+        transform: none;
+      }
+
+      &:before {
+        left: -100%;
+      }
+    }
   }
 
   &:hover {
