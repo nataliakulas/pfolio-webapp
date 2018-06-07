@@ -153,7 +153,10 @@ body {
 }
 
 .settings,
-.social {
+.linkedin,
+.github {
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: 0;
   right: 0;
@@ -162,8 +165,29 @@ body {
   cursor: pointer;
 }
 
-.social {
+.linkedin,
+.github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkedin {
   top: 50px;
+
+  a {
+    width: 22px;
+    height: 21px;
+  }
+}
+
+.github {
+  top: 100px;
+
+  a {
+    width: 23px;
+    height: 27px;
+  }
 }
 
 //endregion

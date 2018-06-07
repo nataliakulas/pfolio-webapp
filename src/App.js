@@ -4,7 +4,8 @@ import {Container, Row, Col} from 'react-grid-system';
 import HomeIco from './media/home';
 import PortfolioIco from './media/portfolio';
 import ContactIco from './media/contact';
-import SocialIco from './media/social';
+import LinkedinIco from './media/linkedin';
+import GithubIco from './media/github';
 import SettingsIco from './media/settings';
 
 import ContactForm from './ContactForm';
@@ -82,9 +83,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.message)
-    console.log(window.location.hash)
-
     return (
       <div className="background" style={this.state.style}>
         <Container>
@@ -94,7 +92,12 @@ class App extends React.Component {
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
                     <SettingsIco className="settings" onClick={this.toggleSettings} fill={this.state.primary} bg={white}/>
-                    <a href="https://www.linkedin.com/in/natalia-kulas"><SocialIco className="social" fill={this.state.primary}/></a>
+                    <div className="linkedin">
+                      <a href="https://www.linkedin.com/in/natalia-kulas"><LinkedinIco fill={this.state.primary}/></a>
+                    </div>
+                    <div className="github">
+                      <a href="https://github.com/nataliakulas"><GithubIco fill={this.state.primary}/></a>
+                    </div>
                     <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
