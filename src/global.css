@@ -1,6 +1,7 @@
 body {
   font-family: 'Comfortaa', sans-serif;
   font-size: 15px;
+  line-height: 25px;
   color: #171717;
   margin: 0;
   padding: 0; }
@@ -60,7 +61,7 @@ body {
 
 .section {
   width: 100%;
-  max-height: 500px;
+  max-height: 480px;
   background-color: #ffffff;
   overflow: hidden;
   flex: 0;
@@ -68,6 +69,67 @@ body {
   .section.open {
     flex: 1;
     transition-delay: 0.5s; }
+
+.stripe-box-wrapper {
+  width: calc(145px * 3);
+  height: 145px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto; }
+
+.stripe-box {
+  max-width: 125px;
+  height: 125px;
+  position: relative;
+  backface-visibility: hidden; }
+  .stripe-box .stripe-label {
+    width: calc(145px * 3);
+    height: 125px;
+    display: inline-block;
+    position: relative;
+    top: -125px;
+    z-index: 1;
+    color: #ffffff;
+    backface-visibility: hidden;
+    transition: all 0.5s; }
+  .stripe-box:nth-of-type(1) .stripe-label {
+    transform: translateX(-435px); }
+  .stripe-box:nth-of-type(2) .stripe-label {
+    transform: translateX(-590px); }
+  .stripe-box:nth-of-type(3) .stripe-label {
+    transform: translateX(-745px); }
+  .stripe-box.empty {
+    width: 125px;
+    height: 125px; }
+  .stripe-box.ratio .stripe-background {
+    background-image: url("./media/projects/ratio.png"); }
+  .stripe-box.opad .stripe-background {
+    background-image: url("media/projects/opad.png"); }
+  .stripe-box.arcadi .stripe-background {
+    background-image: url("media/projects/arcadi.png"); }
+  .stripe-box.cc .stripe-background {
+    background-image: url("media/projects/cc.svg"); }
+  .stripe-box.iggi .stripe-background {
+    background-image: url("media/projects/iggi.png"); }
+  .stripe-box.ww .stripe-background {
+    background-image: url("media/projects/ww.png"); }
+  .stripe-box .stripe-background {
+    width: 125px;
+    height: 125px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; }
+  .stripe-box:hover:nth-of-type(1) .stripe-label {
+    transform: translateX(0); }
+  .stripe-box:hover:nth-of-type(2) .stripe-label {
+    transform: translateX(-155px); }
+  .stripe-box:hover:nth-of-type(3) .stripe-label {
+    transform: translateX(-310px); }
 
 .settings-bar {
   width: 50px;
@@ -237,3 +299,5 @@ button {
     content: url("./media/arrow.svg"); }
   button.delete:before {
     content: url("./media/delete.svg"); }
+
+/*# sourceMappingURL=global.css.map */

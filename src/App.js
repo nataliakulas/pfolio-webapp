@@ -134,6 +134,66 @@ class App extends React.Component {
                     {this.state.portfolio ?
                       <Row style={{height: '100%'}}>
                         <Col>
+                          <div className="stripe-box-wrapper">
+                            <div className="stripe-box ratio">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">Ratio Iwona Kobylnik</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box opad">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">One Picture a day</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="stripe-box-wrapper">
+                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box arcadi">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">Arcadi Connect</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box cc">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">Counting Counter</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="stripe-box-wrapper">
+                            <div className="stripe-box ww">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">Whether Weather</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box iggi">
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">Indeks Glikemiczny - Glycemic Index</div>
+                              </div>
+                            </div>
+                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                              <div className="stripe-background"/>
+                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
+                              </div>
+                            </div>
+                          </div>
                         </Col>
                       </Row> : null}
                     {this.state.contact ?
