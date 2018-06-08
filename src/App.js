@@ -214,7 +214,7 @@ class App extends React.Component {
                 }
                 {this.state.message && window.location.hash === '#error' &&
                 <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
-                  <span>{this.state.translate ? "An error occured while submitting the form." : "W czasie wysyłania formularza wystąpił błąd."}</span>
+                  <span>{this.state.translate ? "An error occurred while submitting the message." : "W czasie wysyłania wiadomości wystąpił błąd."}</span>
                 </button>
                 }
               </div>
