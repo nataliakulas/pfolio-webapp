@@ -138,39 +138,46 @@ class App extends React.Component {
                             <div className="stripe-box ratio">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">Ratio Iwona Kobylnik</div>
+                                <div className="content">
+                                  <a href="https://ratio-test.surge.sh">
+                                    {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
+                                  </a>
+                                  <p></p>
+                                </div>
                               </div>
                             </div>
                             <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
                               <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
-                              </div>
                             </div>
                             <div className="stripe-box opad">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">One Picture a day</div>
+                                <div className="content">
+                                  <a href="https://opad.surge.sh">One Picture a day</a>
+
+                                </div>
                               </div>
                             </div>
                           </div>
                           <div className="stripe-box-wrapper">
                             <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
                               <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
-                              </div>
                             </div>
                             <div className="stripe-box arcadi">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">Arcadi Connect</div>
+                                <div className="content">
+                                  <a href="https://arcadiconnect.fr">Arcadi Connect</a>
+
+                                </div>
                               </div>
                             </div>
                             <div className="stripe-box cc">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">Counting Counter</div>
+                                <div className="content">
+                                  <a href="https://counting-counter.surge.sh">Counting Counter</a>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -178,20 +185,21 @@ class App extends React.Component {
                             <div className="stripe-box ww">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">Whether Weather</div>
+                                <div className="content">
+                                  <a href="https://nataliakulas.github.io/whetherweather-app/">Whether Weather</a>
+                                </div>
                               </div>
                             </div>
                             <div className="stripe-box iggi">
                               <div className="stripe-background"/>
                               <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">Indeks Glikemiczny - Glycemic Index</div>
+                                <div className="content">
+                                  <a href="https://ig-gi.surge.sh">Indeks Glikemiczny - Glycemic Index</a>
+                                </div>
                               </div>
                             </div>
                             <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
                               <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">{this.state.translate ? "Coming soon" : "W przygotowaniu"}</div>
-                              </div>
                             </div>
                           </div>
                         </Col>
