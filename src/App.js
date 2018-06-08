@@ -132,86 +132,79 @@ class App extends React.Component {
                 <div className={`section${this.state.section ? " open" : ""}`}>
                   <div className="content">
                     {this.state.portfolio ?
-                      <Row style={{height: '100%'}}>
-                        <Col>
-                          <div className="stripe-box-wrapper">
-                            <div className="stripe-box ratio">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://ratio-test.surge.sh">
-                                    {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
-                                  </a>
-                                  <p></p>
-                                </div>
+                      <div style={{height: '100%'}}>
+                        <div className="stripe-box-wrapper">
+                          <div className="stripe-box ratio">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://ratio-test.surge.sh">
+                                  {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
+                                </a>
+                                <p></p>
                               </div>
                             </div>
-                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
-                              <div className="stripe-background"/>
-                            </div>
-                            <div className="stripe-box opad">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://opad.surge.sh">One Picture a day</a>
+                          </div>
+                          <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                            <div className="stripe-background"/>
+                          </div>
+                          <div className="stripe-box opad">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://opad.surge.sh">One Picture a day</a>
 
-                                </div>
                               </div>
                             </div>
                           </div>
-                          <div className="stripe-box-wrapper">
-                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
-                              <div className="stripe-background"/>
-                            </div>
-                            <div className="stripe-box arcadi">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://arcadiconnect.fr">Arcadi Connect</a>
+                        </div>
+                        <div className="stripe-box-wrapper">
+                          <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                            <div className="stripe-background"/>
+                          </div>
+                          <div className="stripe-box arcadi">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://arcadiconnect.fr">Arcadi Connect</a>
 
-                                </div>
-                              </div>
-                            </div>
-                            <div className="stripe-box cc">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://counting-counter.surge.sh">Counting Counter</a>
-                                </div>
                               </div>
                             </div>
                           </div>
-                          <div className="stripe-box-wrapper">
-                            <div className="stripe-box ww">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://nataliakulas.github.io/whetherweather-app/">Whether Weather</a>
-                                </div>
+                          <div className="stripe-box cc">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://counting-counter.surge.sh">Counting Counter</a>
                               </div>
-                            </div>
-                            <div className="stripe-box iggi">
-                              <div className="stripe-background"/>
-                              <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
-                                <div className="content">
-                                  <a href="https://ig-gi.surge.sh">Indeks Glikemiczny - Glycemic Index</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
-                              <div className="stripe-background"/>
                             </div>
                           </div>
-                        </Col>
-                      </Row> : null}
+                        </div>
+                        <div className="stripe-box-wrapper">
+                          <div className="stripe-box ww">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://nataliakulas.github.io/whetherweather-app/">Whether Weather</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="stripe-box iggi">
+                            <div className="stripe-background"/>
+                            <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
+                              <div className="content">
+                                <a href="https://ig-gi.surge.sh">Indeks Glikemiczny - Glycemic Index</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
+                            <div className="stripe-background"/>
+                          </div>
+                        </div>
+                      </div> : null}
                     {this.state.contact ?
-                      <Row>
-                        <Col>
-                          <div className="content">
-                            <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
-                          </div>
-                        </Col>
-                      </Row> : null}
+                      <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
+                      : null}
                   </div>
                 </div>
                 {this.state.message && window.location.hash === '#success' &&
