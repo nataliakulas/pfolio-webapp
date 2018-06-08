@@ -104,7 +104,7 @@ body {
       justify-content: space-between; } }
 
 .stripe-box {
-  max-width: 100%;
+  width: 100%;
   height: 125px;
   display: inline-block;
   position: relative;
@@ -124,7 +124,7 @@ body {
     background-position: center;
     margin: 0 auto; }
   .stripe-box .stripe-label {
-    width: calc(140px * 3);
+    width: 100%;
     height: 125px;
     display: inline-block;
     position: relative;
@@ -156,6 +156,9 @@ body {
       .stripe-box .stripe-label a:after {
         bottom: 0;
         transform: translateY(5px); }
+    @media (min-width: 768px) {
+      .stripe-box .stripe-label {
+        width: calc(140px * 3); } }
   .stripe-box:nth-of-type(1) .stripe-label {
     transform: translateX(-100%); }
     @media (min-width: 768px) {
@@ -283,11 +286,14 @@ form {
     margin: 25px auto; }
 
 .field {
-  width: 80%;
+  width: 100%;
   height: 50px;
   position: relative;
   overflow: hidden;
   margin: 10px auto; }
+  @media (min-width: 768px) {
+    .field {
+      width: 80%; } }
   .field label {
     width: 100%;
     height: 100%;
