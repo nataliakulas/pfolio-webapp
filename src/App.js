@@ -87,7 +87,7 @@ class App extends React.Component {
       <div className="background" style={this.state.style}>
         <Container>
           <Row>
-            <Col lg={6} offset={{lg: 3}}>
+            <Col xs={12} sm={10} lg={8} xl={6} offset={{sm: 1, lg: 2, xl: 3}}>
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>

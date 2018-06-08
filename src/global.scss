@@ -48,7 +48,6 @@ body {
 }
 
 .content {
-
   padding: 15px;
 
   @media (min-width: 768px) {
@@ -122,6 +121,10 @@ body {
     overflow: hidden;
     max-height: 480px;
   }
+}
+
+.swipe {
+  transform: translateX(-100px);
 }
 
 .stripe-box-wrapper {

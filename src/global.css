@@ -86,6 +86,9 @@ body {
       overflow: hidden;
       max-height: 480px; } }
 
+.swipe {
+  transform: translateX(-100px); }
+
 .stripe-box-wrapper {
   width: 100%;
   height: calc(140px * 2);
