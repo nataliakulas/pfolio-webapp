@@ -219,7 +219,7 @@ body {
     transform: translateX(0); }
     @media (min-width: 768px) {
       .stripe-box:hover:nth-of-type(2) .stripe-label {
-        transform: translateX(-147px); } }
+        transform: translateX(-148px); } }
   .stripe-box:hover:nth-of-type(3) .stripe-label {
     transform: translateX(0); }
     @media (min-width: 768px) {
