@@ -171,7 +171,8 @@ body {
     color: #ffffff;
     backface-visibility: hidden;
     cursor: default;
-    transition: all 0.5s; }
+    transition: all 0.5s;
+    transition-delay: 0.1s; }
     .stripe-box .stripe-label a {
       position: relative;
       font-weight: 700;
@@ -206,7 +207,7 @@ body {
     transform: translateX(-100%); }
     @media (min-width: 768px) {
       .stripe-box:nth-of-type(2) .stripe-label {
-        transform: translateX(-567px); } }
+        transform: translateX(-570px); } }
   .stripe-box:nth-of-type(3) .stripe-label {
     transform: translateX(-100%); }
     @media (min-width: 768px) {

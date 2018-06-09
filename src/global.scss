@@ -237,6 +237,7 @@ body {
     cursor: default;
 
     transition: all 0.5s;
+    transition-delay: 0.1s;
 
     a {
       position: relative;
@@ -294,7 +295,7 @@ body {
       transform: translateX(-100%);
 
       @media (min-width: 768px) {
-        transform: translateX(-567px);
+        transform: translateX(-570px);
       }
     }
   }
