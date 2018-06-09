@@ -170,6 +170,10 @@ body {
     transition-delay: 0.5s;
   }
 
+  @media (min-width: 568px) and (max-width: 767px) and (orientation: landscape) {
+    max-height: calc(100vh - 115px);
+  }
+
   @media (min-width: 768px) {
     overflow: hidden;
     max-height: 480px;
@@ -516,14 +520,33 @@ button.settings {
 //region Contact Form
 form {
   width: 100%;
-
   display: flex;
   flex-direction: column;
 
   p {
-    width: 80%;
+    width: 100%;
     text-align: center;
-    margin: 25px auto;
+    margin: 5px auto;
+
+    @media (min-width: 375px) {
+      width: 80%;
+    }
+
+    @media (min-width: 375px) and (max-width: 413px) {
+      margin: 10px auto;
+    }
+
+    @media (min-width: 414px) and (max-width: 567px) {
+      margin: 45px auto;
+    }
+
+    @media (min-width: 568px) and (max-width: 767px) and (orientation: landscape) {
+      width: 90%;
+    }
+
+    @media (min-width: 768px) {
+      margin: 25px auto;
+    }
   }
 }
 
@@ -532,7 +555,15 @@ form {
   height: 50px;
   position: relative;
   overflow: hidden;
-  margin: 10px auto;
+  margin: 5px auto;
+
+  @media (min-width: 375px) {
+    margin: 10px auto;
+  }
+
+  @media (min-width: 375px) and (max-width: 767px) {
+    width: 90%;
+  }
 
   @media (min-width: 768px) {
     width: 80%;
@@ -555,14 +586,34 @@ form {
       outline: none;
 
       + label {
-        transform: translateX(69%);
+        transform: translateX(55%);
+
+        @media (min-width: 375px) and (max-width: 413px) {
+          transform: translateX(59%);
+        }
+
+        @media (min-width: 414px) and (max-width: 567px) {
+          transform: translateX(63%);
+        }
+
+        @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+          transform: translateX(72%);
+        }
+
+        @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+          transform: translateX(66%);
+        }
+
+        @media (min-width: 768px) {
+          transform: translateX(69%);
+        }
       }
     }
   }
 
   input,
   textarea {
-    width: 69%;
+    width: 55%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -580,13 +631,53 @@ form {
     transition: transform 0.5s ease;
     transition-delay: 50ms;
 
+    @media (min-width: 375px) and (max-width: 413px) {
+      width: 59%;
+    }
+
+    @media (min-width: 414px) and (max-width: 567px) {
+      width: 63%;
+    }
+
+    @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+      width: 72%;
+    }
+
+    @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+      width: 66%;
+    }
+
+    @media (min-width: 768px) {
+      width: 69%;
+    }
+
     &:focus,
     &.filled {
       transform: translateX(100%);
       outline: none;
 
       + label {
-        transform: translateX(69%);
+        transform: translateX(55%);
+
+        @media (min-width: 375px) and (max-width: 413px) {
+          transform: translateX(59%);
+        }
+
+        @media (min-width: 414px) and (max-width: 567px) {
+          transform: translateX(63%);
+        }
+
+        @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+          transform: translateX(72%);
+        }
+
+        @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+          transform: translateX(66%);
+        }
+
+        @media (min-width: 768px) {
+          transform: translateX(69%);
+        }
       }
     }
   }
@@ -617,20 +708,16 @@ textarea {
     display: inline-block;
     backface-visibility: hidden;
     text-decoration: none;
-
     transition: all 0.5s;
   }
 
   &:before {
     width: 100%;
     height: 100%;
-
     position: absolute;
     top: 0;
     left: -100%;
-
     transition: all 0.5s;
-
     font-size: 175%;
     line-height: 2;
   }
@@ -660,6 +747,23 @@ textarea {
 
     &:before {
       left: 0;
+    }
+  }
+
+  &.submit {
+    width: 60%;
+    margin: 10px auto;
+
+    @media (min-width: 375px) {
+      margin: 20px auto;
+    }
+
+    @media (min-width: 375px) and (max-width: 767px) {
+      width: 50%;
+    }
+
+    @media (min-width: 768px) {
+      width: 30%;
     }
   }
 

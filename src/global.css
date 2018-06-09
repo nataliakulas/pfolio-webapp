@@ -115,6 +115,9 @@ body {
   .section.open {
     flex: 1;
     transition-delay: 0.5s; }
+  @media (min-width: 568px) and (max-width: 767px) and (orientation: landscape) {
+    .section {
+      max-height: calc(100vh - 115px); } }
   @media (min-width: 768px) {
     .section {
       overflow: hidden;
@@ -346,16 +349,37 @@ form {
   display: flex;
   flex-direction: column; }
   form p {
-    width: 80%;
+    width: 100%;
     text-align: center;
-    margin: 25px auto; }
+    margin: 5px auto; }
+    @media (min-width: 375px) {
+      form p {
+        width: 80%; } }
+    @media (min-width: 375px) and (max-width: 413px) {
+      form p {
+        margin: 10px auto; } }
+    @media (min-width: 414px) and (max-width: 567px) {
+      form p {
+        margin: 45px auto; } }
+    @media (min-width: 568px) and (max-width: 767px) and (orientation: landscape) {
+      form p {
+        width: 90%; } }
+    @media (min-width: 768px) {
+      form p {
+        margin: 25px auto; } }
 
 .field {
   width: 100%;
   height: 50px;
   position: relative;
   overflow: hidden;
-  margin: 10px auto; }
+  margin: 5px auto; }
+  @media (min-width: 375px) {
+    .field {
+      margin: 10px auto; } }
+  @media (min-width: 375px) and (max-width: 767px) {
+    .field {
+      width: 90%; } }
   @media (min-width: 768px) {
     .field {
       width: 80%; } }
@@ -373,10 +397,30 @@ form {
     outline: none; }
     .field:hover input + label,
     .field:hover textarea + label {
-      transform: translateX(69%); }
+      transform: translateX(55%); }
+      @media (min-width: 375px) and (max-width: 413px) {
+        .field:hover input + label,
+        .field:hover textarea + label {
+          transform: translateX(59%); } }
+      @media (min-width: 414px) and (max-width: 567px) {
+        .field:hover input + label,
+        .field:hover textarea + label {
+          transform: translateX(63%); } }
+      @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+        .field:hover input + label,
+        .field:hover textarea + label {
+          transform: translateX(72%); } }
+      @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+        .field:hover input + label,
+        .field:hover textarea + label {
+          transform: translateX(66%); } }
+      @media (min-width: 768px) {
+        .field:hover input + label,
+        .field:hover textarea + label {
+          transform: translateX(69%); } }
   .field input,
   .field textarea {
-    width: 69%;
+    width: 55%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -393,6 +437,26 @@ form {
     transform: translateX(-100%);
     transition: transform 0.5s ease;
     transition-delay: 50ms; }
+    @media (min-width: 375px) and (max-width: 413px) {
+      .field input,
+      .field textarea {
+        width: 59%; } }
+    @media (min-width: 414px) and (max-width: 567px) {
+      .field input,
+      .field textarea {
+        width: 63%; } }
+    @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+      .field input,
+      .field textarea {
+        width: 72%; } }
+    @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+      .field input,
+      .field textarea {
+        width: 66%; } }
+    @media (min-width: 768px) {
+      .field input,
+      .field textarea {
+        width: 69%; } }
     .field input:focus, .field input.filled,
     .field textarea:focus,
     .field textarea.filled {
@@ -401,7 +465,32 @@ form {
       .field input:focus + label, .field input.filled + label,
       .field textarea:focus + label,
       .field textarea.filled + label {
-        transform: translateX(69%); }
+        transform: translateX(55%); }
+        @media (min-width: 375px) and (max-width: 413px) {
+          .field input:focus + label, .field input.filled + label,
+          .field textarea:focus + label,
+          .field textarea.filled + label {
+            transform: translateX(59%); } }
+        @media (min-width: 414px) and (max-width: 567px) {
+          .field input:focus + label, .field input.filled + label,
+          .field textarea:focus + label,
+          .field textarea.filled + label {
+            transform: translateX(63%); } }
+        @media (min-width: 568px) and (max-width: 666px) and (orientation: landscape) {
+          .field input:focus + label, .field input.filled + label,
+          .field textarea:focus + label,
+          .field textarea.filled + label {
+            transform: translateX(72%); } }
+        @media (min-width: 667px) and (max-width: 767px) and (orientation: landscape) {
+          .field input:focus + label, .field input.filled + label,
+          .field textarea:focus + label,
+          .field textarea.filled + label {
+            transform: translateX(66%); } }
+        @media (min-width: 768px) {
+          .field input:focus + label, .field input.filled + label,
+          .field textarea:focus + label,
+          .field textarea.filled + label {
+            transform: translateX(69%); } }
 
 textarea {
   resize: none;
@@ -448,6 +537,18 @@ textarea {
     transform: translateX(200%); }
   .button:hover:before {
     left: 0; }
+  .button.submit {
+    width: 60%;
+    margin: 10px auto; }
+    @media (min-width: 375px) {
+      .button.submit {
+        margin: 20px auto; } }
+    @media (min-width: 375px) and (max-width: 767px) {
+      .button.submit {
+        width: 50%; } }
+    @media (min-width: 768px) {
+      .button.submit {
+        width: 30%; } }
   .button.submit:before {
     content: url("media/icons/arrow.svg"); }
   .button.delete {
