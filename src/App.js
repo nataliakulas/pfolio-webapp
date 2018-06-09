@@ -113,7 +113,10 @@ class App extends React.Component {
                     </div>
                     <Row>
                       <Col>
-                        <div className="content" style={{marginRight: 100}}>
+                        <div className="content" style={{marginRight: 100, height: 130}}>
+                          <p>{this.state.translate ? "en" : "pl"}</p>
+                        </div>
+                        <div className="content" style={{marginRight: 45}}>
                           <p>{this.state.translate ? "en" : "pl"}</p>
                         </div>
                       </Col>
