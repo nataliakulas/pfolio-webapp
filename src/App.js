@@ -132,7 +132,7 @@ class App extends React.Component {
                 <div className={`section${this.state.section ? " open" : ""}`}>
                   <div className="content">
                     {this.state.portfolio ?
-                      <div style={{height: '100%'}}>
+                      <div className="swipe">
                         <div className="stripe-box-wrapper">
                           <div className="stripe-box ratio">
                             <div className="stripe-background"/>
@@ -201,10 +201,9 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                           </div>
                         </div>
-                      </div> : null}
-                    {this.state.contact ?
+                      </div> :
                       <ContactForm field={this.state.primary} input={this.state.secondary} translate={this.state.translate}/>
-                      : null}
+                    }
                   </div>
                 </div>
                 {this.state.message && window.location.hash === '#success' &&

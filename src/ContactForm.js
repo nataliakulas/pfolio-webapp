@@ -12,7 +12,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <form method="POST" action={process.env.NODE_ENV === "production" ? "https://stripefolio.herokuapp.com/" : "/"}>
+      <form className="swipe" method="POST" action={process.env.NODE_ENV === "production" ? "https://stripefolio.herokuapp.com/" : "/"}>
         <p>{this.props.translate ?
           "If you have any questions, or just wish to contact me, please send me a message." :
           "Jeżeli masz do mnie pytanie, lub chciał(a)byś się ze mną skontaktować, wyślij mi wiadomość."}</p>

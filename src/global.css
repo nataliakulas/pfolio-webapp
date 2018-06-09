@@ -1,3 +1,9 @@
+@keyframes swipe {
+  0% {
+    transform: translateX(-110%); }
+  100% {
+    transform: translateX(0); } }
+
 body {
   font-family: 'Comfortaa', sans-serif;
   font-size: 15px;
@@ -87,7 +93,8 @@ body {
       max-height: 480px; } }
 
 .swipe {
-  transform: translateX(-100px); }
+  animation: swipe 0.35s;
+  height: 100%; }
 
 .stripe-box-wrapper {
   width: 100%;
