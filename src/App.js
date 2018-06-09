@@ -113,7 +113,7 @@ class App extends React.Component {
                     </div>
                     <Row>
                       <Col>
-                        <div className="content">
+                        <div className="content" style={{marginRight: 100}}>
                           <p>{this.state.translate ? "en" : "pl"}</p>
                         </div>
                       </Col>
@@ -129,7 +129,7 @@ class App extends React.Component {
                       <PortfolioIco fill={white}/>
                     </li>
                     <li onClick={() => this.sectionOpen('contact')}>
-                      <span>Contact</span>
+                      <span>{this.state.translate ? "Contact" : "Kontakt"}</span>
                       <ContactIco fill={white}/>
                     </li>
                   </ul>
