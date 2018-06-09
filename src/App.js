@@ -1,12 +1,12 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-grid-system';
 
-import HomeIco from './media/home';
-import PortfolioIco from './media/portfolio';
-import ContactIco from './media/contact';
-import LinkedinIco from './media/linkedin';
-import GithubIco from './media/github';
-import SettingsIco from './media/settings';
+import HomeIco from './media/icons/home';
+import PortfolioIco from './media/icons/portfolio';
+import ContactIco from './media/icons/contact';
+import LinkedinIco from './media/icons/linkedin';
+import GithubIco from './media/icons/github';
+import SettingsIco from './media/icons/settings';
 
 import ContactForm from './ContactForm';
 
@@ -54,7 +54,8 @@ class App extends React.Component {
     this.setState({section: false})
   };
 
-  toggleSettings = () => {
+  toggleSettings(e) {
+    e.preventDefault();
     this.setState({settings: !this.state.settings})
   };
 
@@ -91,13 +92,18 @@ class App extends React.Component {
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
-                    <SettingsIco className="settings" onClick={this.toggleSettings} fill={this.state.primary} bg={white}/>
-                    <div className="linkedin">
-                      <a href="https://www.linkedin.com/in/natalia-kulas"><LinkedinIco fill={this.state.primary}/></a>
-                    </div>
-                    <div className="github">
-                      <a href="https://github.com/nataliakulas"><GithubIco fill={this.state.primary}/></a>
-                    </div>
+                    <a href="#" className="settings" onClick={(e) => this.toggleSettings(e)}>
+                      <span style={{color: this.state.primary}}>Settings</span>
+                      <SettingsIco fill={this.state.primary} bg={white}/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/natalia-kulas" className="linkedin">
+                      <span style={{color: this.state.primary}}>LinkedIn</span>
+                      <LinkedinIco fill={this.state.primary}/>
+                    </a>
+                    <a href="https://github.com/nataliakulas" className="github">
+                      <span style={{color: this.state.primary}}>GitHub</span>
+                      <GithubIco fill={this.state.primary}/>
+                    </a>
                     <div className={`settings-bar${this.state.settings ? " visible" : ""}`}>
                       <div className="square black" onClick={() => this.changeTheme('black')}/>
                       <div className="square orange" onClick={() => this.changeTheme('orange')}/>
@@ -106,14 +112,6 @@ class App extends React.Component {
                       <div className="square" style={{color: this.state.primary}} onClick={() => this.toggleTranslation()}>{this.state.translate ? "pl" : "en"}</div>
                     </div>
                     <Row>
-                      <Col>
-                        <div className="content">
-                          {this.state.translate ? "en" :
-                            <div>
-                            </div>
-                          }
-                        </div>
-                      </Col>
                       <Col>
                         <div className="content">
                           <p>{this.state.translate ? "en" : "pl"}</p>

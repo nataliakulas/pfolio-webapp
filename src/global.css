@@ -259,32 +259,48 @@ body {
 .settings,
 .linkedin,
 .github {
-  width: 40px;
+  width: 70px;
   height: 40px;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
-  margin: 5px;
-  cursor: pointer; }
-
-.linkedin,
-.github {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  overflow: hidden; }
+  .settings svg,
+  .linkedin svg,
+  .github svg {
+    min-width: 24px;
+    min-height: 40px;
+    margin-right: 5px;
+    transform: translateX(-15px);
+    transition: all 0.5s; }
+  .settings span,
+  .linkedin span,
+  .github span {
+    font-weight: 700;
+    line-height: 40px;
+    transform: translateX(-100%);
+    transition: all 0.5s; }
+  .settings:hover svg,
+  .linkedin:hover svg,
+  .github:hover svg {
+    transform: translateX(25px); }
+  .settings:hover span,
+  .linkedin:hover span,
+  .github:hover span {
+    transform: translateX(20%); }
 
 .linkedin {
   top: 50px; }
-  .linkedin a {
-    width: 22px;
-    height: 21px; }
 
 .github {
   top: 100px; }
-  .github a {
-    width: 23px;
-    height: 27px; }
 
 form {
   width: 100%;
@@ -391,7 +407,7 @@ button {
   button:hover:before {
     left: 0; }
   button.submit:before {
-    content: url("./media/arrow.svg"); }
+    content: url("media/icons/arrow.svg"); }
   button.delete {
     margin-top: 10px;
     margin-bottom: 0; }
@@ -399,4 +415,4 @@ button {
       button.delete {
         margin-top: 30px; } }
   button.delete:before {
-    content: url("./media/delete.svg"); }
+    content: url("media/icons/delete.svg"); }
