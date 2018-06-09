@@ -557,10 +557,13 @@ form {
     position: absolute;
     top: 0;
     right: 100%;
-    border: none;
     font-family: 'Comfortaa', sans-serif;
     font-size: 15px;
     line-height: 20px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-left: none;
+    border-right: none;
     margin: 0;
     padding: 15px;
     transform: translateX(-100%);
