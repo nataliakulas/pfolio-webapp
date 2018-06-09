@@ -46,7 +46,7 @@ body {
   z-index: 100;
   margin-top: -50px; }
   .stripe-bar ul {
-    width: 65%;
+    width: 90%;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -56,11 +56,41 @@ body {
     margin: 0 auto; }
     @media (min-width: 768px) {
       .stripe-bar ul {
-        width: 50%; } }
+        width: 60%; } }
   .stripe-bar li {
+    width: 100px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
-    cursor: pointer; }
+    cursor: pointer;
+    overflow: hidden; }
+    .stripe-bar li.immobile svg {
+      transform: translateX(15px); }
+    .stripe-bar li.immobile:hover svg {
+      transform: translateX(15px); }
+    .stripe-bar li span {
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 0.55px;
+      line-height: 40px;
+      text-transform: uppercase;
+      transform: translateX(-100px);
+      transition: all 0.5s; }
+    .stripe-bar li svg {
+      min-width: 40px;
+      min-height: 40px;
+      margin-bottom: 5px;
+      transition: all 0.5s; }
+    .stripe-bar li:nth-of-type(2) svg {
+      transform: translateX(-45px); }
+    .stripe-bar li:nth-of-type(3) svg {
+      transform: translateX(-50px); }
+    .stripe-bar li:hover svg {
+      transform: translateX(130px); }
+    .stripe-bar li:hover span {
+      transform: translateX(20px); }
 
 .stripe {
   width: 100%;
@@ -286,6 +316,7 @@ body {
     min-width: 100px;
     font-weight: 700;
     line-height: 40px;
+    letter-spacing: 0.55px;
     transform: translateX(-100px);
     transition: all 0.5s; }
   .settings:hover svg,

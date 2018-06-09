@@ -71,7 +71,7 @@ body {
   margin-top: -50px;
 
   ul {
-    width: 65%;
+    width: 90%;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -81,14 +81,70 @@ body {
     margin: 0 auto;
 
     @media (min-width: 768px) {
-      width: 50%;
+      width: 60%;
     }
   }
 
   li {
+    width: 100px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
     cursor: pointer;
+    overflow: hidden;
+
+    &.immobile {
+      svg {
+        transform: translateX(15px);
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(15px);
+        }
+      }
+    }
+
+    span {
+      color: $white;
+      font-weight: 700;
+      letter-spacing: 0.55px;
+      line-height: 40px;
+      text-transform: uppercase;
+      transform: translateX(-100px);
+      transition: all 0.5s;
+    }
+
+    svg {
+      min-width: 40px;
+      min-height: 40px;
+      margin-bottom: 5px;
+      transition: all 0.5s;
+    }
+
+    &:nth-of-type(2) {
+      svg {
+        transform: translateX(-45px);
+      }
+    }
+
+    &:nth-of-type(3) {
+      svg {
+        transform: translateX(-50px);
+      }
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(130px);
+      }
+
+      span {
+        transform: translateX(20px);
+      }
+    }
   }
 }
 
@@ -433,6 +489,7 @@ body {
     min-width: 100px;
     font-weight: 700;
     line-height: 40px;
+    letter-spacing: 0.55px;
     transform: translateX(-100px);
     transition: all 0.5s;
   }

@@ -122,9 +122,16 @@ class App extends React.Component {
                 </div>
                 <div className={`stripe-bar`} style={{backgroundColor: this.state.primary}}>
                   <ul>
-                    <li onClick={this.sectionClose}><HomeIco fill={white}/></li>
-                    <li onClick={() => this.sectionOpen('portfolio')}><PortfolioIco fill={white}/></li>
-                    <li onClick={() => this.sectionOpen('contact')}><ContactIco fill={white}/></li>
+                    <li onClick={this.sectionClose} className="immobile">
+                      <HomeIco fill={white}/></li>
+                    <li onClick={() => this.sectionOpen('portfolio')}>
+                      <span>Portfolio</span>
+                      <PortfolioIco fill={white}/>
+                    </li>
+                    <li onClick={() => this.sectionOpen('contact')}>
+                      <span>Contact</span>
+                      <ContactIco fill={white}/>
+                    </li>
                   </ul>
                 </div>
                 <div className={`section${this.state.section ? " open" : ""}`}>
