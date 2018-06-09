@@ -93,7 +93,7 @@ class App extends React.Component {
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
                     <a href="#" className="settings" onClick={(e) => this.toggleSettings(e)}>
-                      <span style={{color: this.state.primary}}>Settings</span>
+                      <span style={{color: this.state.primary}}>{this.state.translate ? "Settings" : "Ustawienia"}</span>
                       <SettingsIco fill={this.state.primary} bg={white}/>
                     </a>
                     <a href="https://www.linkedin.com/in/natalia-kulas" className="linkedin">

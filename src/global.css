@@ -259,7 +259,7 @@ body {
 .settings,
 .linkedin,
 .github {
-  width: 70px;
+  width: 100px;
   height: 40px;
   position: absolute;
   top: 0;
@@ -277,15 +277,16 @@ body {
   .github svg {
     min-width: 24px;
     min-height: 40px;
-    margin-right: 5px;
+    margin-right: 10px;
     transform: translateX(-15px);
     transition: all 0.5s; }
   .settings span,
   .linkedin span,
   .github span {
+    min-width: 100px;
     font-weight: 700;
     line-height: 40px;
-    transform: translateX(-100%);
+    transform: translateX(-100px);
     transition: all 0.5s; }
   .settings:hover svg,
   .linkedin:hover svg,
@@ -294,7 +295,7 @@ body {
   .settings:hover span,
   .linkedin:hover span,
   .github:hover span {
-    transform: translateX(20%); }
+    transform: translateX(20px); }
 
 .linkedin {
   top: 50px; }
