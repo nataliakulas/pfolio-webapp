@@ -128,12 +128,12 @@ class App extends React.Component {
                     <li onClick={this.sectionClose} className="immobile">
                       <HomeIco fill={white}/></li>
                     <li onClick={() => this.sectionOpen('portfolio')}>
-                      <span>Portfolio</span>
                       <PortfolioIco fill={white}/>
+                      <span>Portfolio</span>
                     </li>
                     <li onClick={() => this.sectionOpen('contact')}>
-                      <span>{this.state.translate ? "Contact" : "Kontakt"}</span>
                       <ContactIco fill={white}/>
+                      <span>{this.state.translate ? "Contact" : "Kontakt"}</span>
                     </li>
                   </ul>
                 </div>

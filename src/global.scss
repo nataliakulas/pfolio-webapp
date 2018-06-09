@@ -71,7 +71,7 @@ body {
   margin-top: -50px;
 
   ul {
-    width: 90%;
+    width: 100%;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -81,7 +81,7 @@ body {
     margin: 0 auto;
 
     @media (min-width: 768px) {
-      width: 60%;
+      width: 300px;
     }
   }
 
@@ -91,20 +91,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 5px 0;
     cursor: pointer;
     overflow: hidden;
 
-    &.immobile {
-      svg {
-        transform: translateX(15px);
-      }
-
-      &:hover {
-        svg {
-          transform: translateX(15px);
-        }
-      }
+    &.immobile svg {
+      transform: translate(0, 0);
     }
 
     span {
@@ -114,36 +106,31 @@ body {
       letter-spacing: 0.55px;
       line-height: 40px;
       text-transform: uppercase;
-      transform: translateX(-100px);
+      text-align: center;
+      transform: translate(-20px, 45px);
       transition: all 0.5s;
     }
 
     svg {
       min-width: 40px;
       min-height: 40px;
-      margin-bottom: 5px;
+      transform: translate(50px, 0px);
       transition: all 0.5s;
-    }
-
-    &:nth-of-type(2) {
-      svg {
-        transform: translateX(-45px);
-      }
-    }
-
-    &:nth-of-type(3) {
-      svg {
-        transform: translateX(-50px);
-      }
     }
 
     &:hover {
       svg {
-        transform: translateX(130px);
+        transform: translate(50px, -45px);
       }
 
       span {
-        transform: translateX(20px);
+        transform: translate(-20px, 0px);
+      }
+
+      &.immobile {
+        svg {
+          transform: translate(0, 0);
+        }
       }
     }
   }
