@@ -181,7 +181,7 @@ body {
       .stripe-box .stripe-label a:before, .stripe-box .stripe-label a:after {
         content: '';
         width: 100%;
-        height: 3px;
+        height: 2px;
         position: absolute;
         left: -200%;
         background: #ffffff;
@@ -206,12 +206,12 @@ body {
     transform: translateX(-100%); }
     @media (min-width: 768px) {
       .stripe-box:nth-of-type(2) .stripe-label {
-        transform: translateX(-570px); } }
+        transform: translateX(-567px); } }
   .stripe-box:nth-of-type(3) .stripe-label {
     transform: translateX(-100%); }
     @media (min-width: 768px) {
       .stripe-box:nth-of-type(3) .stripe-label {
-        transform: translateX(-720px); } }
+        transform: translateX(-715px); } }
   .stripe-box:hover:nth-of-type(1) .stripe-label {
     transform: translateX(0); }
   .stripe-box:hover:nth-of-type(2) .stripe-label {
@@ -326,6 +326,14 @@ body {
   .github:hover span {
     transform: translateX(20px); }
 
+button.settings {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 15px;
+  text-align: left;
+  border: none;
+  background-color: #ffffff;
+  padding: 0; }
+
 .linkedin {
   top: 50px; }
 
@@ -398,7 +406,7 @@ textarea {
   resize: none;
   height: auto; }
 
-button {
+.button {
   width: 30%;
   height: 50px;
   position: relative;
@@ -412,13 +420,13 @@ button {
   backface-visibility: hidden;
   transition: all 0.5s;
   overflow: hidden; }
-  button span {
+  .button span {
     width: 100%;
     display: inline-block;
     backface-visibility: hidden;
     text-decoration: none;
     transition: all 0.5s; }
-  button:before {
+  .button:before {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -427,25 +435,25 @@ button {
     transition: all 0.5s;
     font-size: 175%;
     line-height: 2; }
-  button:disabled {
+  .button:disabled {
     cursor: not-allowed; }
-    button:disabled span {
+    .button:disabled span {
       text-decoration: line-through; }
-    button:disabled:hover span {
+    .button:disabled:hover span {
       transform: none; }
-    button:disabled:hover:before {
+    .button:disabled:hover:before {
       left: -100%; }
-  button:hover span {
+  .button:hover span {
     transform: translateX(200%); }
-  button:hover:before {
+  .button:hover:before {
     left: 0; }
-  button.submit:before {
+  .button.submit:before {
     content: url("media/icons/arrow.svg"); }
-  button.delete {
+  .button.delete {
     margin-top: 10px;
     margin-bottom: 0; }
     @media (min-width: 768px) {
-      button.delete {
+      .button.delete {
         margin-top: 30px; } }
-  button.delete:before {
+  .button.delete:before {
     content: url("media/icons/delete.svg"); }

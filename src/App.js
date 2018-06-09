@@ -92,15 +92,15 @@ class App extends React.Component {
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
-                    <a href="#" className="settings" onClick={(e) => this.toggleSettings(e)}>
+                    <button className="settings" onClick={(e) => this.toggleSettings(e)}>
                       <span style={{color: this.state.primary}}>{this.state.translate ? "Settings" : "Ustawienia"}</span>
                       <SettingsIco fill={this.state.primary} bg={white}/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/natalia-kulas" className="linkedin">
+                    </button>
+                    <a href="https://www.linkedin.com/in/natalia-kulas" className="linkedin" target="_blank" rel="noopener noreferrer">
                       <span style={{color: this.state.primary}}>LinkedIn</span>
                       <LinkedinIco fill={this.state.primary}/>
                     </a>
-                    <a href="https://github.com/nataliakulas" className="github">
+                    <a href="https://github.com/nataliakulas" className="github" target="_blank" rel="noopener noreferrer">
                       <span style={{color: this.state.primary}}>GitHub</span>
                       <GithubIco fill={this.state.primary}/>
                     </a>
@@ -146,7 +146,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://ratio-test.surge.sh">
+                                <a href="https://ratio-test.surge.sh" target="_blank" rel="noopener noreferrer">
                                   {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
                                 </a>
                                 <p></p>
@@ -160,7 +160,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://opad.surge.sh">One Picture a day</a>
+                                <a href="https://opad.surge.sh" target="_blank" rel="noopener noreferrer">One Picture a day</a>
 
                               </div>
                             </div>
@@ -174,7 +174,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://arcadiconnect.fr">Arcadi Connect</a>
+                                <a href="https://arcadiconnect.fr" target="_blank" rel="noopener noreferrer">Arcadi Connect</a>
 
                               </div>
                             </div>
@@ -183,7 +183,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://counting-counter.surge.sh">Counting Counter</a>
+                                <a href="https://counting-counter.surge.sh" target="_blank" rel="noopener noreferrer">Counting Counter</a>
                               </div>
                             </div>
                           </div>
@@ -193,7 +193,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://nataliakulas.github.io/whetherweather-app/">Whether Weather</a>
+                                <a href="https://nataliakulas.github.io/whetherweather-app/" target="_blank" rel="noopener noreferrer">Whether Weather</a>
                               </div>
                             </div>
                           </div>
@@ -201,7 +201,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://ig-gi.surge.sh">Indeks Glikemiczny - Glycemic Index</a>
+                                <a href="https://ig-gi.surge.sh" target="_blank" rel="noopener noreferrer">Indeks Glikemiczny - Glycemic Index</a>
                               </div>
                             </div>
                           </div>
@@ -215,12 +215,12 @@ class App extends React.Component {
                   </div>
                 </div>
                 {this.state.message && window.location.hash === '#success' &&
-                <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
+                <button className="button delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
                   <span>{this.state.translate ? "Your message has been sent!" : "Wiadomość została wysłana!"}</span>
                 </button>
                 }
                 {this.state.message && window.location.hash === '#error' &&
-                <button className="delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
+                <button className="button delete" style={{width: '100%', backgroundColor: this.state.primary}} type="button" onClick={() => this.resetHistory()}>
                   <span>{this.state.translate ? "An error occurred while submitting the message." : "W czasie wysyłania wiadomości wystąpił błąd."}</span>
                 </button>
                 }

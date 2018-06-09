@@ -28,7 +28,7 @@ export default class extends React.Component {
           <textarea name="message" rows="5" className={`${this.state.message ? "filled" : ""}`} style={{borderColor: this.props.field}}/>
           <label htmlFor="message">{this.props.translate ? "Message" : "Wiadomość"}</label>
         </div>
-        <button className="submit" style={{backgroundColor: this.props.field}} type="submit" disabled={!(this.state.name && this.state.email && this.state.message)}>
+        <button className="button submit" style={{backgroundColor: this.props.field}} type="submit" disabled={!(this.state.name && this.state.email && this.state.message)}>
           <span>{this.props.translate ? "Send" : "Wyślij"}</span>
         </button>
       </form>
