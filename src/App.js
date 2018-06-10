@@ -115,7 +115,7 @@ class App extends React.Component {
                       <Col>
                         <div className="content top">
                           <p>{this.state.translate ? "My name is Natalia." : "Nazywam się Natalia."}</p>
-                          <p>{this.state.translate ? "I'm a Front-end developer." : "Jestem programistką front-end."}</p>
+                          <p>{this.state.translate ? "I'm a front-end developer." : "Jestem programistką front-end."}</p>
                           <p>{this.state.translate ? "My specialization are web applications" : "Moją specjalizacją są aplikacje webowe."}</p>
                         </div>
                         <div className="content bottom">
@@ -153,7 +153,8 @@ class App extends React.Component {
                                 <a href="https://ratio-test.surge.sh" target="_blank" rel="noopener noreferrer">
                                   {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
                                 </a>
-                                <p></p>
+                                <p>{this.state.translate ? "Business card of the accounting office." : "Wizytówka biura rachunkowego."}</p>
+                                <p>{this.state.translate ? "Commercial project." : "Projekt komercyjny."}</p>
                               </div>
                             </div>
                           </div>
@@ -164,8 +165,9 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://opad.surge.sh" target="_blank" rel="noopener noreferrer">One Picture a day</a>
-
+                                <a href="https://opad.surge.sh" target="_blank" rel="noopener noreferrer">One Picture a Day</a>
+                                <p>{this.state.translate ? "Private picture gallery." : "Prywatna galeria zdjęć."}</p>
+                                <p>{this.state.translate ? "Individual project." : "Projekt indywidualny."}</p>
                               </div>
                             </div>
                           </div>
@@ -179,7 +181,8 @@ class App extends React.Component {
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
                                 <a href="https://arcadiconnect.fr" target="_blank" rel="noopener noreferrer">Arcadi Connect</a>
-
+                                <p>{this.state.translate ? "French cultural website." : "Francuski serwis kulturalny."}</p>
+                                <p>{this.state.translate ? "Commercial project." : "Projekt komercyjny."}</p>
                               </div>
                             </div>
                           </div>
@@ -188,6 +191,8 @@ class App extends React.Component {
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
                                 <a href="https://counting-counter.surge.sh" target="_blank" rel="noopener noreferrer">Counting Counter</a>
+                                <p>{this.state.translate ? "Countdown application." : "Aplikacja odliczająca czas."}</p>
+                                <p>{this.state.translate ? "Individual project." : "Projekt indywidualny."}</p>
                               </div>
                             </div>
                           </div>
@@ -198,6 +203,8 @@ class App extends React.Component {
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
                                 <a href="https://nataliakulas.github.io/whetherweather-app/" target="_blank" rel="noopener noreferrer">Whether Weather</a>
+                                <p>{this.state.translate ? "Simple weather application." : "Prosta aplikacja pogodowa."}</p>
+                                <p>{this.state.translate ? "Individual project." : "Projekt indywidualny."}</p>
                               </div>
                             </div>
                           </div>
@@ -206,6 +213,8 @@ class App extends React.Component {
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
                                 <a href="https://ig-gi.surge.sh" target="_blank" rel="noopener noreferrer">Indeks Glikemiczny - Glycemic Index</a>
+                                <p>{this.state.translate ? "Application displaying GI of products." : "Aplikacja wyświetlająca IG produktów."}</p>
+                                <p>{this.state.translate ? "Team project." : "Projekt zespołowy."}</p>
                               </div>
                             </div>
                           </div>

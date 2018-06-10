@@ -344,12 +344,21 @@ body {
     transition: all 0.5s;
     transition-delay: 0.1s;
 
+    p {
+      margin: 0;
+    }
+
     a {
       position: relative;
       font-weight: 700;
       color: $white;
       text-decoration: none;
       display: inline-block;
+      margin-bottom: 5px;
+
+      @media (min-width: 768px) {
+        margin-bottom: 10px;
+      }
 
       &:before,
       &:after {

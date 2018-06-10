@@ -251,12 +251,18 @@ body {
     cursor: default;
     transition: all 0.5s;
     transition-delay: 0.1s; }
+    .stripe-box .stripe-label p {
+      margin: 0; }
     .stripe-box .stripe-label a {
       position: relative;
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
-      display: inline-block; }
+      display: inline-block;
+      margin-bottom: 5px; }
+      @media (min-width: 768px) {
+        .stripe-box .stripe-label a {
+          margin-bottom: 10px; } }
       .stripe-box .stripe-label a:before, .stripe-box .stripe-label a:after {
         content: '';
         width: 100%;
