@@ -113,11 +113,15 @@ class App extends React.Component {
                     </div>
                     <Row>
                       <Col>
-                        <div className="content" style={{marginRight: 100, height: 130}}>
-                          <p>{this.state.translate ? "en" : "pl"}</p>
+                        <div className="content top">
+                          <p>{this.state.translate ? "My name is Natalia." : "Nazywam się Natalia."}</p>
+                          <p>{this.state.translate ? "I'm a Front-end developer." : "Jestem programistką front-end."}</p>
+                          <p>{this.state.translate ? "My specialization are web applications" : "Moją specjalizacją są aplikacje webowe."}</p>
                         </div>
-                        <div className="content" style={{marginRight: 45}}>
-                          <p>{this.state.translate ? "en" : "pl"}</p>
+                        <div className="content bottom">
+                          <p>{this.state.translate ? "I value good design." : "Cenię dobry design."}</p>
+                          <p>{this.state.translate ? "I think that a design should be both functional and eye-catching, every pixel counts." :
+                            "Uważam, że projekt powinien być zarówno funkcjonalny, jak i przyciągać oko, każdy piksel się liczy."}</p>
                         </div>
                       </Col>
                     </Row>

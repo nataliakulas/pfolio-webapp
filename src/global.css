@@ -92,11 +92,26 @@ body {
 
 .stripe {
   width: 100%;
-  max-height: calc(100vh - 85px);
+  max-height: 470px;
   background-color: #ffffff;
   overflow: hidden;
   flex: 1;
   transition: flex 0.5s linear; }
+  @media (min-width: 375px) and (max-width: 413px) {
+    .stripe {
+      max-height: 390px; } }
+  @media (min-width: 414px) and (max-width: 567px) {
+    .stripe {
+      max-height: 365px; } }
+  @media (min-width: 568px) and (max-width: 666px) {
+    .stripe {
+      max-height: 290px; } }
+  @media (min-width: 667px) and (max-width: 735px) {
+    .stripe {
+      max-height: 335px; } }
+  @media (min-width: 736px) and (max-width: 767px) {
+    .stripe {
+      max-height: 340px; } }
   @media (min-width: 768px) {
     .stripe {
       max-height: 300px; } }
@@ -104,6 +119,66 @@ body {
     flex: 0; }
   .stripe.open {
     transition-delay: 0.5s; }
+  .stripe .content.top p,
+  .stripe .content.bottom p {
+    margin: 0; }
+  .stripe .content.top {
+    height: 235px;
+    margin-right: 90px; }
+    @media (min-width: 375px) and (max-width: 413px) {
+      .stripe .content.top {
+        height: 155px;
+        margin-right: 90px; } }
+    @media (min-width: 414px) and (max-width: 567px) {
+      .stripe .content.top {
+        height: 130px;
+        margin-right: 75px; } }
+    @media (min-width: 568px) and (max-width: 666px) {
+      .stripe .content.top {
+        height: 105px;
+        margin-right: 40px; } }
+    @media (min-width: 667px) and (max-width: 735px) {
+      .stripe .content.top {
+        height: 125px;
+        margin-right: 90px; } }
+    @media (min-width: 736px) and (max-width: 767px) {
+      .stripe .content.top {
+        height: 130px;
+        margin-right: 90px; } }
+    @media (min-width: 768px) {
+      .stripe .content.top {
+        height: 110px;
+        margin-right: 100px; } }
+  .stripe .content.bottom {
+    height: 154px;
+    margin-right: 5px; }
+    @media (min-width: 375px) and (max-width: 413px) {
+      .stripe .content.bottom {
+        height: 155px;
+        margin-right: 50px; } }
+    @media (min-width: 414px) and (max-width: 567px) {
+      .stripe .content.bottom {
+        height: 155px;
+        margin-right: 85px; } }
+    @media (min-width: 568px) and (max-width: 666px) {
+      .stripe .content.bottom {
+        height: 105px;
+        margin-right: 40px; } }
+    @media (min-width: 667px) and (max-width: 735px) {
+      .stripe .content.bottom {
+        height: 130px;
+        margin-right: 55px; } }
+    @media (min-width: 736px) and (max-width: 767px) {
+      .stripe .content.bottom {
+        height: 130px;
+        margin-right: 50px; } }
+    @media (min-width: 768px) {
+      .stripe .content.bottom {
+        height: 105px;
+        margin-right: 85px; } }
+    @media (min-width: 1200px) {
+      .stripe .content.bottom {
+        margin-right: 45px; } }
 
 .section {
   width: 100%;
