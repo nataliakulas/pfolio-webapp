@@ -2,7 +2,7 @@
 Preview: https://stripefolio.surge.sh
 
 My personal portfolio, hosted on surge and heroku.
-Client side is based on React and server side is written in Node.js.
+Client side is based on React and server side, contact form, is written in Node.js with use of Gmail and OAuth mechanism.
 
 Author: Natalia Kulas
 
