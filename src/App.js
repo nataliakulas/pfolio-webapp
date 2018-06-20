@@ -32,7 +32,8 @@ class App extends React.Component {
       secondary: grey,
       style: {backgroundImage: `repeating-linear-gradient(${grey} 0, ${grey} 50px, ${white} 0, ${white} 100px)`},
       translate: false,
-      message: window.location.hash === '#success' || window.location.hash === '#error'
+      message: window.location.hash === '#success' || window.location.hash === '#error',
+      active: ""
     }
   }
 
@@ -83,12 +84,20 @@ class App extends React.Component {
     }
   };
 
+  togglePreview(e) {
+    if (this.state.active === e.currentTarget.id) {
+      this.setState({active: ""})
+    } else {
+      this.setState({active: e.currentTarget.id})
+    }
+  }
+
   render() {
     return (
       <div className="background" style={this.state.style}>
         <Container>
           <Row>
-            <Col xs={12} sm={10} lg={8} xl={6} offset={{sm: 1, lg: 2, xl: 3}}>
+            <Col xs={12} sm={10} lg={8} offset={{sm: 1, lg: 2}}>
               <div className="wrapper">
                 <div className={`stripe${this.state.section ? " close" : " open"}`}>
                   <div className="content" style={{position: 'relative'}}>
@@ -146,7 +155,7 @@ class App extends React.Component {
                     {this.state.portfolio ?
                       <div className="swipe">
                         <div className="stripe-box-wrapper">
-                          <div className="stripe-box ratio">
+                          <div id="ratio" className={`stripe-box${this.state.active === "ratio" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
@@ -161,7 +170,7 @@ class App extends React.Component {
                           <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
                             <div className="stripe-background"/>
                           </div>
-                          <div className="stripe-box opad">
+                          <div id="opad" className={`stripe-box${this.state.active === "opad" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
@@ -176,7 +185,7 @@ class App extends React.Component {
                           <div className="stripe-box empty" style={{backgroundImage: `repeating-linear-gradient(${this.state.secondary} 0, ${this.state.secondary} 5px, ${white} 0, ${white} 10px)`}}>
                             <div className="stripe-background"/>
                           </div>
-                          <div className="stripe-box arcadi">
+                          <div id="arcadi" className={`stripe-box${this.state.active === "arcadi" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
@@ -186,7 +195,7 @@ class App extends React.Component {
                               </div>
                             </div>
                           </div>
-                          <div className="stripe-box cc">
+                          <div id="cc" className={`stripe-box${this.state.active === "cc" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
@@ -198,7 +207,7 @@ class App extends React.Component {
                           </div>
                         </div>
                         <div className="stripe-box-wrapper">
-                          <div className="stripe-box ww">
+                          <div id="ww" className={`stripe-box${this.state.active === "ww" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
@@ -208,7 +217,7 @@ class App extends React.Component {
                               </div>
                             </div>
                           </div>
-                          <div className="stripe-box iggi">
+                          <div id="iggi" className={`stripe-box${this.state.active === "iggi" ? " active" : ""}`} onClick={(e) => this.togglePreview(e)}>
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">

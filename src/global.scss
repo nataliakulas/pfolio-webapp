@@ -54,6 +54,10 @@ body {
   align-items: center;
 
   overflow: hidden;
+
+  @media (min-width: 768px) {
+    max-width: 595px;
+  }
 }
 
 .content {
@@ -253,7 +257,7 @@ body {
     }
 
     @media (min-width: 1200px) {
-      margin-right: 45px;
+      margin-right: 80px;
     }
   }
 }
@@ -277,7 +281,7 @@ body {
 
   @media (min-width: 768px) {
     overflow: hidden;
-    max-height: 480px;
+    max-height: 570px;
   }
 }
 
@@ -287,8 +291,6 @@ body {
 }
 
 .stripe-box-wrapper {
-  width: 100%;
-  height: calc(140px * 2);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -298,30 +300,36 @@ body {
   margin: 0 auto;
 
   @media (min-width: 768px) {
-    width: calc(140px * 3);
-    height: 145px;
+    width: calc(165px * 3 + 30px);
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
 .stripe-box {
-  width: 100%;
-  height: 125px;
+  width: 165px;
+  height: 165px;
   display: inline-block;
   position: relative;
   backface-visibility: hidden;
   cursor: pointer;
+  overflow: hidden;
   margin: 0;
 
   @media (min-width: 768px) {
-    max-width: 125px;
-    margin: 0;
+    max-width: 165px;
+    margin: 5px;
+  }
+
+  &.active {
+    .stripe-label {
+      transform: translateX(0px);
+    }
   }
 
   .stripe-background {
-    width: 125px;
-    height: 125px;
+    width: 165px;
+    height: 165px;
     background-image: none;
     background-repeat: no-repeat;
     background-size: 100px;
@@ -330,22 +338,27 @@ body {
   }
 
   .stripe-label {
-    width: 100%;
-    height: 125px;
+    width: 165px;
+    height: 165px;
     display: inline-block;
     position: relative;
-    top: -125px;
+    top: -165px;
     z-index: 1;
 
+    font-size: 13px;
+    line-height: 20px;
     color: $white;
     backface-visibility: hidden;
     cursor: default;
+    overflow: hidden;
 
     transition: all 0.5s;
     transition-delay: 0.1s;
 
+    transform: translateX(-170px);
+
     p {
-      margin: 0;
+      margin: 0 0 5px 0;
     }
 
     a {
@@ -354,11 +367,7 @@ body {
       color: $white;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 5px;
-
-      @media (min-width: 768px) {
-        margin-bottom: 10px;
-      }
+      margin-bottom: 10px;
 
       &:before,
       &:after {
@@ -366,88 +375,26 @@ body {
         width: 100%;
         height: 2px;
         position: absolute;
-        left: -200%;
         background: $white;
         transition: all 0.5s;
       }
 
       &:hover {
-        &:before,
-        &:after {
+        &:before {
           left: 0;
         }
       }
 
       &:before {
         top: 0;
+        left: calc(-100% - 15px);
         transform: translateY(-5px);
       }
 
       &:after {
         bottom: 0;
+        left: 0;
         transform: translateY(5px);
-      }
-    }
-
-    @media (min-width: 768px) {
-      width: calc(140px * 3);
-    }
-  }
-
-  &:nth-of-type(1) {
-    .stripe-label {
-      transform: translateX(-100%);
-
-      @media (min-width: 768px) {
-        transform: translateX(-420px);
-      }
-    }
-  }
-
-  &:nth-of-type(2) {
-    .stripe-label {
-      transform: translateX(-100%);
-
-      @media (min-width: 768px) {
-        transform: translateX(-570px);
-      }
-    }
-  }
-
-  &:nth-of-type(3) {
-    .stripe-label {
-      transform: translateX(-100%);
-
-      @media (min-width: 768px) {
-        transform: translateX(-715px);
-      }
-    }
-  }
-
-  &:hover {
-    &:nth-of-type(1) {
-      .stripe-label {
-        transform: translateX(0);
-      }
-    }
-
-    &:nth-of-type(2) {
-      .stripe-label {
-        transform: translateX(0);
-
-        @media (min-width: 768px) {
-          transform: translateX(-148px);
-        }
-      }
-    }
-
-    &:nth-of-type(3) {
-      .stripe-label {
-        transform: translateX(0);
-
-        @media (min-width: 768px) {
-          transform: translateX(-295px);
-        }
       }
     }
   }
@@ -457,44 +404,45 @@ body {
 
     @media (min-width: 768px) {
       display: block;
-      width: 125px;
-      height: 125px;
+      width: 165px;
+      height: 165px;
       cursor: default;
+      margin: 5px;
     }
   }
 
   //region Projects
-  &.ratio {
+  &#ratio {
     .stripe-background {
       background-image: url("./media/projects/ratio.png");
     }
   }
 
-  &.opad {
+  &#opad {
     .stripe-background {
       background-image: url("media/projects/opad.png");
     }
   }
 
-  &.arcadi {
+  &#arcadi {
     .stripe-background {
       background-image: url("media/projects/arcadi.png");
     }
   }
 
-  &.cc {
+  &#cc {
     .stripe-background {
       background-image: url("media/projects/cc.svg");
     }
   }
 
-  &.iggi {
+  &#iggi {
     .stripe-background {
       background-image: url("media/projects/iggi.png");
     }
   }
 
-  &.ww {
+  &#ww {
     .stripe-background {
       background-image: url("media/projects/ww.png");
     }

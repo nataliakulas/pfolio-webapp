@@ -33,6 +33,9 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden; }
+  @media (min-width: 768px) {
+    .wrapper {
+      max-width: 595px; } }
 
 .content {
   padding: 15px; }
@@ -178,7 +181,7 @@ body {
         margin-right: 85px; } }
     @media (min-width: 1200px) {
       .stripe .content.bottom {
-        margin-right: 45px; } }
+        margin-right: 80px; } }
 
 .section {
   width: 100%;
@@ -196,15 +199,13 @@ body {
   @media (min-width: 768px) {
     .section {
       overflow: hidden;
-      max-height: 480px; } }
+      max-height: 570px; } }
 
 .swipe {
   animation: swipe 0.35s;
   height: 100%; }
 
 .stripe-box-wrapper {
-  width: 100%;
-  height: calc(140px * 2);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -214,120 +215,95 @@ body {
   margin: 0 auto; }
   @media (min-width: 768px) {
     .stripe-box-wrapper {
-      width: calc(140px * 3);
-      height: 145px;
+      width: calc(165px * 3 + 30px);
       flex-direction: row;
       justify-content: space-between; } }
 
 .stripe-box {
-  width: 100%;
-  height: 125px;
+  width: 165px;
+  height: 165px;
   display: inline-block;
   position: relative;
   backface-visibility: hidden;
   cursor: pointer;
+  overflow: hidden;
   margin: 0; }
   @media (min-width: 768px) {
     .stripe-box {
-      max-width: 125px;
-      margin: 0; } }
+      max-width: 165px;
+      margin: 5px; } }
+  .stripe-box.active .stripe-label {
+    transform: translateX(0px); }
   .stripe-box .stripe-background {
-    width: 125px;
-    height: 125px;
+    width: 165px;
+    height: 165px;
     background-image: none;
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
     margin: 0 auto; }
   .stripe-box .stripe-label {
-    width: 100%;
-    height: 125px;
+    width: 165px;
+    height: 165px;
     display: inline-block;
     position: relative;
-    top: -125px;
+    top: -165px;
     z-index: 1;
+    font-size: 13px;
+    line-height: 20px;
     color: #ffffff;
     backface-visibility: hidden;
     cursor: default;
+    overflow: hidden;
     transition: all 0.5s;
-    transition-delay: 0.1s; }
+    transition-delay: 0.1s;
+    transform: translateX(-170px); }
     .stripe-box .stripe-label p {
-      margin: 0; }
+      margin: 0 0 5px 0; }
     .stripe-box .stripe-label a {
       position: relative;
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 5px; }
-      @media (min-width: 768px) {
-        .stripe-box .stripe-label a {
-          margin-bottom: 10px; } }
+      margin-bottom: 10px; }
       .stripe-box .stripe-label a:before, .stripe-box .stripe-label a:after {
         content: '';
         width: 100%;
         height: 2px;
         position: absolute;
-        left: -200%;
         background: #ffffff;
         transition: all 0.5s; }
-      .stripe-box .stripe-label a:hover:before, .stripe-box .stripe-label a:hover:after {
+      .stripe-box .stripe-label a:hover:before {
         left: 0; }
       .stripe-box .stripe-label a:before {
         top: 0;
+        left: calc(-100% - 15px);
         transform: translateY(-5px); }
       .stripe-box .stripe-label a:after {
         bottom: 0;
+        left: 0;
         transform: translateY(5px); }
-    @media (min-width: 768px) {
-      .stripe-box .stripe-label {
-        width: calc(140px * 3); } }
-  .stripe-box:nth-of-type(1) .stripe-label {
-    transform: translateX(-100%); }
-    @media (min-width: 768px) {
-      .stripe-box:nth-of-type(1) .stripe-label {
-        transform: translateX(-420px); } }
-  .stripe-box:nth-of-type(2) .stripe-label {
-    transform: translateX(-100%); }
-    @media (min-width: 768px) {
-      .stripe-box:nth-of-type(2) .stripe-label {
-        transform: translateX(-570px); } }
-  .stripe-box:nth-of-type(3) .stripe-label {
-    transform: translateX(-100%); }
-    @media (min-width: 768px) {
-      .stripe-box:nth-of-type(3) .stripe-label {
-        transform: translateX(-715px); } }
-  .stripe-box:hover:nth-of-type(1) .stripe-label {
-    transform: translateX(0); }
-  .stripe-box:hover:nth-of-type(2) .stripe-label {
-    transform: translateX(0); }
-    @media (min-width: 768px) {
-      .stripe-box:hover:nth-of-type(2) .stripe-label {
-        transform: translateX(-148px); } }
-  .stripe-box:hover:nth-of-type(3) .stripe-label {
-    transform: translateX(0); }
-    @media (min-width: 768px) {
-      .stripe-box:hover:nth-of-type(3) .stripe-label {
-        transform: translateX(-295px); } }
   .stripe-box.empty {
     display: none; }
     @media (min-width: 768px) {
       .stripe-box.empty {
         display: block;
-        width: 125px;
-        height: 125px;
-        cursor: default; } }
-  .stripe-box.ratio .stripe-background {
+        width: 165px;
+        height: 165px;
+        cursor: default;
+        margin: 5px; } }
+  .stripe-box#ratio .stripe-background {
     background-image: url("./media/projects/ratio.png"); }
-  .stripe-box.opad .stripe-background {
+  .stripe-box#opad .stripe-background {
     background-image: url("media/projects/opad.png"); }
-  .stripe-box.arcadi .stripe-background {
+  .stripe-box#arcadi .stripe-background {
     background-image: url("media/projects/arcadi.png"); }
-  .stripe-box.cc .stripe-background {
+  .stripe-box#cc .stripe-background {
     background-image: url("media/projects/cc.svg"); }
-  .stripe-box.iggi .stripe-background {
+  .stripe-box#iggi .stripe-background {
     background-image: url("media/projects/iggi.png"); }
-  .stripe-box.ww .stripe-background {
+  .stripe-box#ww .stripe-background {
     background-image: url("media/projects/ww.png"); }
   .stripe-box p {
     margin-top: 0;
