@@ -159,7 +159,7 @@ class App extends React.Component {
                             <div className="stripe-background"/>
                             <div className="stripe-label" style={{backgroundColor: this.state.primary}}>
                               <div className="content">
-                                <a href="https://ratio-test.surge.sh" target="_blank" rel="noopener noreferrer">
+                                <a href="http://www.ratiobiuro.pl" target="_blank" rel="noopener noreferrer">
                                   {this.state.translate ? "Ratio Accounting Office" : "Ratio Biuro Rachunkowe"}
                                 </a>
                                 <p>{this.state.translate ? "Business card of the accounting office." : "Wizytówka biura rachunkowego."}</p>
